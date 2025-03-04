@@ -1,0 +1,123 @@
+.header_section {
+    background-color: #022f4a;
+    padding: 10px 0;
+    font-family: "Roboto", sans-serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 25px;
+  }
+  .navbar-brand{
+    text-decoration: none;
+  }
+  .navbar-brand .Logo {
+    text-transform: uppercase;
+    color: white;
+    font-weight: bold;
+    font-size: 22px;
+  }
+  
+  .navbar-toggler {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+  }
+  
+  /* Menu ihishe kuri screen ntoya */
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    gap:80px;
+    /* align-items: center; */
+    /* justify-content: space-between; */
+  }
+  
+  .nav-links ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    text-transform: uppercase;
+    gap: 20px;
+  }
+  
+  .nav-links .nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  
+  .LoginAndRegister {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .LoginAndRegister button {
+    background-color: #fe4801;
+    width: 90px;
+    height: 30px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    margin-top: 7px;
+  }
+  
+  /* Responsive styles */
+  @media screen and (max-width: 768px) {
+    .navbar-toggler {
+      display: block;
+    }
+  
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      background-color: #022f4a;
+      position: absolute;
+      top: 50px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      padding: 20px 0;
+    }
+  
+    .nav-links.open {
+      display: flex;
+      flex-direction: column;
+      gap:5px;
+    }
+  
+    .nav-links ul {
+        display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin-right: 50px;
+    }
+  
+    .LoginAndRegister {
+        display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .LoginAndRegister button{
+        margin-top: 0;
+        top: 0;
+  
+    }
+   .nav-links .nav-link{
+        color: white;
+        text-decoration: none;
+        font-size: 10px;
+    }
+  }
+  
