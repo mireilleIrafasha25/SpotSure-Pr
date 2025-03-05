@@ -125,7 +125,7 @@ const Login = ({ HandleLoginForm }) => {
             style={{
               width: '100%',
               padding: '0.75rem',
-              backgroundColor: 'blue',
+              backgroundColor: '#FE4801',
               color: 'white',
               borderRadius: '0.375rem',
               fontWeight: 'bold',
@@ -142,7 +142,7 @@ const Login = ({ HandleLoginForm }) => {
           Don’t have an account?{' '}
           <button
             onClick={HandleSignUpForm}
-            style={{ color: 'blue', background: "none", border: "none", cursor: "pointer" }}
+            style={{ color: '#FE4801', background: "none", border: "none", cursor: "pointer" }}
           >
             Register
           </button>

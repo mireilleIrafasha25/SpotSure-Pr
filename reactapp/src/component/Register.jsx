@@ -101,7 +101,7 @@ const HandleLoginForm=()=>
             {/* {showPassword ? <FaEyeSlash /> : <FaEye />} */}
           </span></div>
           <div style={{display:"flex",gap:"20px"}}><span style={{color:"black",paddingTop:"10px"}}>ConfirmPassword</span> <input type="password" placeholder="Re-type your password" value={confirmPassword} onChange={(e)=>setConfirmPassword(e.target.value)} style={{width:"360px"}} required/></div>
-              <div style={{display:"flex",gap:"20px"}}> <button type="submit" disabled={loading} style={{width:"200px",marginLeft:"0px"}}>SIGN UP</button> <span style={{marginTop:"25px",color:"black"}}>Already have account<button onClick={HandleLoginForm} style={{color:"blue",marginLeft:"5px",background:"none"}}>Login</button></span></div> 
+              <div style={{display:"flex",gap:"20px"}}> <button type="submit" disabled={loading} style={{width:"200px",marginLeft:"0px",backgroundColor:"#FE4801",border:"none"}}>SIGN UP</button> <span style={{marginTop:"25px",color:"black"}}>Already have account<span onClick={HandleLoginForm} style={{color:"#FE4801",marginLeft:"5px",background:"none",cursor:"pointer"}}>Login</span></span></div> 
               {message && <p style={{color:"red"}}>{message}</p>}
             </form>
             {loading && <p>Loading...</p>}

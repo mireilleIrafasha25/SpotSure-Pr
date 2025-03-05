@@ -1,8 +1,20 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import "../styles/navbar.css";
-
+import Login from "./Login";
+import Register_own from "./Register";
 const NavBar = () => {
+  const [modal,useModal]=useState(false);
+    const [model,useModel] = useState(false);
+    const navigate=useNavigate();
+    const HandleLoginForm=()=>
+    {
+        useModal(!modal)
+    }
+    const HandleSignUpForm=()=>
+    {
+        useModel(!model)
+    }
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -11,6 +23,8 @@ const NavBar = () => {
 
   return (
     <header className="header_section">
+         {modal && <Login HandleLoginForm={HandleLoginForm} />}
+         {model && <Register_own HandleSignUpForm={HandleSignUpForm} />}
       <div className="container-fluid">
         <nav className="navbar custom_nav-container">
           <Link to="/" className="navbar-brand">
@@ -39,8 +53,8 @@ const NavBar = () => {
               </li>
             </ul>
             <div className="LoginAndRegister">
-              <Link to="/"><button>LOGIN</button></Link>
-              <Link to="/"><button>REGISTER</button></Link>
+              <button onClick={HandleLoginForm}>LOGIN</button>
+              <button onClick={HandleSignUpForm}>REGISTER</button>
             </div>
           </div>
         </nav>
