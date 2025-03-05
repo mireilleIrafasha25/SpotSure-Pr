@@ -1,0 +1,61 @@
+.Main-Home {
+    /* margin-top: 82px; */
+    background-image: url(/CarHomeBg.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 70vh; /* Make it full-screen */
+    color: white; /* Ensure text is visible */
+    left:0;
+    right: 0;
+    width: 100%;
+    position:absolute;
+}
+
+.Main-Home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height:70vh;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay effect */
+}
+
+.Home-Content {
+    position: relative;
+    z-index: 1; /* Ensure text appears above overlay */
+}
+
+.Home-Content .Home-title {
+    font-size: 40px;
+    font-weight:700;
+    line-height: 50px;
+    text-align: center;
+    font-style: normal;
+    font-family:"Raleway,sans-serif";
+}
+
+.Home-Content .SubHome-content {
+    font-size: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 24px;
+    font-weight: 400;
+    margin-top: 20px;
+    margin-left: 370px;
+    font-family: "Raleway, sans-serif";
+    font-style: normal;
+}
+
+.Book-Button {
+    background-color: #FE4801;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    margin-left: 500px;
+    border-radius: 5px;
+   font-family: "Raleway,sans-serif";
+}
