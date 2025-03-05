@@ -29,13 +29,13 @@ const NavBar = () => {
                 <Link to="/about" className="nav-link">About Us</Link>
               </li>
               <li className="nav-item">
-                <Link to="/" className="nav-link">Service</Link>
+                <Link to="/service" className="nav-link">Service</Link>
               </li>
               <li className="nav-item">
-                <Link to="/" className="nav-link">Features</Link>
+                <Link to="/feature" className="nav-link">Features</Link>
               </li>
               <li className="nav-item">
-                <Link to="/" className="nav-link">Contact Us</Link>
+                <Link to="/contact" className="nav-link">Contact Us</Link>
               </li>
             </ul>
             <div className="LoginAndRegister">

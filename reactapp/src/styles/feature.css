@@ -1,0 +1,35 @@
+.features-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    background-color: #ff5100;
+    padding: 3rem 0;
+    width:100%;
+    left:0;
+    margin-top:70px;
+  }
+  
+  .feature-card {
+    text-align: center;
+    color: white;
+    max-width: 250px;
+  }
+  
+  .feature-icon {
+    font-size: 50px;
+    margin-bottom: 15px;
+    padding: 20px;
+    border: 2px dashed white;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  
+  h3 {
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  
+  p {
+    font-size: 14px;
+  }
+  

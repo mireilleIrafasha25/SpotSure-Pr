@@ -1,5 +1,4 @@
 .Main-Home {
-    /* margin-top: 82px; */
     background-image: url(/CarHomeBg.jpg);
     background-size: cover;
     background-position: center;
@@ -8,7 +7,7 @@
     left:0;
     right: 0;
     width: 100%;
-    position:absolute;
+ padding-top: 10rem;
 }
 
 .Main-Home::before {
@@ -58,4 +57,64 @@
     margin-left: 500px;
     border-radius: 5px;
    font-family: "Raleway,sans-serif";
+}
+/* RESPONSIVE DESIGN */
+
+/* Tablets (768px - 1024px) */
+@media (max-width: 1024px) {
+    .Home-Content .Home-title {
+        font-size: 2rem;
+    }
+
+    .Home-Content .SubHome-content {
+        font-size: 1rem;
+    }
+
+    .Book-Button {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+}
+
+/* Mobile Devices (Up to 767px) */
+@media (max-width: 767px) {
+    .Main-Home {
+        height: 40vh;
+        margin-top: 0;
+        top: 4.5rem;
+        position: absolute;
+        width: 100%;
+    }
+    .Main-Home::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height:40vh;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.5); /* Dark overlay effect */
+    }
+
+    .Home-Content .Home-title {
+        font-size: 1.8rem;
+    }
+
+    .Home-Content .SubHome-content {
+    font-size: 20px;
+    max-width: 300px;
+    margin: 0 auto;
+    margin-top: 10px;
+    font-family: "Raleway, sans-serif";
+    font-style: normal;
+    }
+
+    .Home-Content .Book-Button {
+        background-color: #FE4801;
+        color: white;
+        padding: 12px 24px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+       font-family: "Raleway,sans-serif";
+    }
 }

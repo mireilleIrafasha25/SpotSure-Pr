@@ -24,15 +24,15 @@ const About = () => {
           <div className="hover-overlay">🔗</div>
         </div>
         <div className="image-overlay">
-          <img src="/w-2.jpg" alt="Parking 1" />
+          <img src="/w-2.jpg" alt="Parking 2" />
           <div className="hover-overlay">🔗</div>
         </div>
         <div className="image-overlay">
-          <img src="/w-3.jpg" alt="Parking 1" />
+          <img src="/w-3.jpg" alt="Parking 3" />
           <div className="hover-overlay">🔗</div>
         </div>
         <div className="image-overlay">
-          <img src="/w-4.jpg" alt="Parking 1" />
+          <img src="/w-4.jpg" alt="Parking 4" />
           <div className="hover-overlay">🔗</div>
         </div>
       </div>
