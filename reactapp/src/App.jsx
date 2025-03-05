@@ -6,6 +6,7 @@ import About from "./component/About"
 import Services from "./component/Service"
 import Features from "./component/Features"
 import Contact from "./component/Contact"
+import BookingForm from "./component/Booking"
 function App() {
   return (
     <Router>
@@ -16,6 +17,7 @@ function App() {
       <Route path="/service" element={<Services/>}/>
       <Route path="/feature" element={<Features/>}/>
       <Route path="/contact" element={<Contact/>}/>
+      <Route path="/booking" element={<BookingForm/>}/>
      </Route>
     </Routes>
     </Router>

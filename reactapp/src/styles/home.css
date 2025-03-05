@@ -7,7 +7,7 @@
     left:0;
     right: 0;
     width: 100%;
- padding-top: 10rem;
+    padding-top:10rem ;
 }
 
 .Main-Home::before {
@@ -79,11 +79,8 @@
 /* Mobile Devices (Up to 767px) */
 @media (max-width: 767px) {
     .Main-Home {
-        height: 40vh;
-        margin-top: 0;
-        top: 4.5rem;
-        position: absolute;
         width: 100%;
+        height: 40vh;
     }
     .Main-Home::before {
         content: "";

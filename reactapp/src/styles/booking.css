@@ -1,0 +1,56 @@
+/* Container Layout */
+.booking-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 130px;
+  }
+  
+  /* Title */
+  .booking-container h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: black;
+  }
+  
+  /* Labels */
+  .booking-container label {
+    display: block;
+    font-weight: bold;
+    color: black;
+    margin: 10px 0 5px;
+    text-align: left;
+  }
+  
+  /* Input Fields */
+  .booking-container input {
+    width: 390px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: left;
+  }
+  
+  /* Submit Button */
+  .booking-container button {
+    width: 100%;
+    padding: 10px;
+    background: #FE4801;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .booking-container button:hover {
+    background: darkorange;
+  }
+  
