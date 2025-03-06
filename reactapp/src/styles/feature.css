@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     gap: 2rem;
-    background-color: #ff5100;
+    background-color: white;
     padding: 3rem 0;
     width:100%;
     left:0;
@@ -12,7 +12,12 @@
   .feature-card {
     text-align: center;
     color: white;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #ff5100;
     max-width: 250px;
+    box-shadow: 0 0 5px rgb(0,0,0,0.1);
+    cursor: pointer;
   }
   
   .feature-icon {

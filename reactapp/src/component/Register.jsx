@@ -35,7 +35,7 @@ const HandleLoginForm=()=>
             setMessage(response.data.message);
             setTimeout(()=>
             {
-                navigate("/login")
+                navigate("/verify")
             },1000)
         } catch (error) {
             setMessage(error.response?.data?.message || "SignUp Failed")

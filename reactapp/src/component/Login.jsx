@@ -19,7 +19,7 @@ const Login = ({ HandleLoginForm }) => {
     setLoading(true);
 
     try {
-      const response = await axios.post("https://localhost:4000/SpotSure/user/signin", {
+      const response = await axios.post("http://localhost:4000/SpotSure/user/signin", {
         email,
         password,
       });

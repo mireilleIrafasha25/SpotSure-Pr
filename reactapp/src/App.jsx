@@ -9,6 +9,7 @@ import Contact from "./component/Contact"
 import BookingForm from "./component/Booking"
 import Login from "./component/Login"
 import Register_own from "./component/Register"
+import Verification from "./component/Verification"
 function App() {
   return (
     <Router>
@@ -22,6 +23,7 @@ function App() {
       <Route path="/booking" element={<BookingForm/>}/>
       <Route path="/login" element={<Login/>}/>
       <Route path="/register" element={<Register_own/>}/>
+      <Route path="/verify" element={<Verification/>}/>
      </Route>
     </Routes>
     </Router>
