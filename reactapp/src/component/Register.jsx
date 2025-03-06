@@ -6,14 +6,13 @@ import { IoClose } from "react-icons/io5";
 import Login from "./Login";
 const Register_own=({HandleSignUpForm})=>
 {
-    const [Firstname,setFirstname] =useState("");
-    const [Lastname, setLastname] = useState("");
+    const [Name, setLastname] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
      const [message, setMessage] = useState("");
      const [loading, setLoading] = useState(false);
      const [showPassword, setShowPassword] = useState(false); 
-     const [confirmPassword, setConfirmPassword] = useState("");
     const navigate = useNavigate();
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword); 
@@ -27,9 +26,8 @@ const HandleLoginForm=()=>
         e.preventDefault();
         setLoading(true);
         try {
-            const response = await axios.post("https://botiga-backend.onrender.com/Botiga/user/signup", {
-                Firstname,
-                Lastname,
+            const response = await axios.post("http://localhost:4000/SpotSure/user/signup", {
+                Name,
                 email,
                 password,
                 confirmPassword
@@ -84,22 +82,11 @@ const HandleLoginForm=()=>
         </div><div><IoClose onClick={HandleSignUpForm} style={{marginTop:"0px", fontSize: "30px",cursor:"pointer"}}/></div></div>
             
             <form onSubmit={handleSubmit} style={{display:"flex",flexDirection:"column",gap:"20px"}}>
-                <div style={{display:"flex",gap:"20px"}}><span style={{color:"black",paddingTop:"10px"}}>First Name:</span><input type="text" placeholder="Firstname" value={Firstname} onChange={(e)=>setFirstname(e.target.value)} style={{width:"400px"}} required/></div>
-                <div style={{display:"flex",gap:"20px"}}><span style={{color:"black",paddingTop:"10px"}}>Last Name:</span><input type="text" placeholder="Lastname" value={Lastname} onChange={(e)=>setLastname(e.target.value)} style={{width:"400px"}} required/></div>
-                <div style={{display:"flex",gap:"20px"}}><span style={{color:"black",paddingTop:"10px"}}>Email:</span><input type="email" placeholder="Email" value={email} onChange={(e)=>setEmail(e.target.value)} style={{width:"400px",marginLeft:"40px"}} required/></div>
+                <div style={{display:"flex",gap:"20px"}}><span style={{color:"black",paddingTop:"10px"}}>Name:</span><input type="text" placeholder="Enter your Name" value={Name} onChange={(e)=>setLastname(e.target.value)} style={{width:"400px"}} required/></div>
+                <div style={{display:"flex",gap:"20px"}}><span style={{color:"black",paddingTop:"10px"}}>Email:</span><input type="email" placeholder="Enter your Email" value={email} onChange={(e)=>setEmail(e.target.value)} style={{width:"400px",marginLeft:"40px"}} required/></div>
                 <div style={{display:"flex",gap:"20px"}}><span style={{color:"black",paddingTop:"10px"}}>Password:</span>
                  <input   type={showPassword ? "text" : "password"}  style={{ paddingRight: "30px" ,width:"380px",marginLeft:"10px"}} placeholder="Password" value={password} onChange={(e)=>setPassword(e.target.value)}  required/>
-                <span
-            onClick={togglePasswordVisibility}
-            style={{
-              position: "absolute",
-              right: "10px",
-              top: "35px",
-              cursor: "pointer",
-            }}
-          >
-            {/* {showPassword ? <FaEyeSlash /> : <FaEye />} */}
-          </span></div>
+          </div>
           <div style={{display:"flex",gap:"20px"}}><span style={{color:"black",paddingTop:"10px"}}>ConfirmPassword</span> <input type="password" placeholder="Re-type your password" value={confirmPassword} onChange={(e)=>setConfirmPassword(e.target.value)} style={{width:"360px"}} required/></div>
               <div style={{display:"flex",gap:"20px"}}> <button type="submit" disabled={loading} style={{width:"200px",marginLeft:"0px",backgroundColor:"#FE4801",border:"none"}}>SIGN UP</button> <span style={{marginTop:"25px",color:"black"}}>Already have account<span onClick={HandleLoginForm} style={{color:"#FE4801",marginLeft:"5px",background:"none",cursor:"pointer"}}>Login</span></span></div> 
               {message && <p style={{color:"red"}}>{message}</p>}
