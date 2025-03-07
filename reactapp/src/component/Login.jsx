@@ -28,7 +28,9 @@ const Login = ({ HandleLoginForm }) => {
       localStorage.setItem("token", token);
       const decoded = jwt_decode(token);
       const userRole = decoded.role;
-
+      const userName=decoded.Name;
+       // Bika izina muri localStorage
+    localStorage.setItem("userName", userName);
       // Close modal first
       HandleLoginForm();
 
@@ -36,7 +38,7 @@ const Login = ({ HandleLoginForm }) => {
       if (userRole === "admin") {
         navigate('/dashboard123');
       } else if (userRole === "user") {
-        navigate('/booking');
+        navigate('/client-dashboard');
       } else {
         navigate('/none');
       }
