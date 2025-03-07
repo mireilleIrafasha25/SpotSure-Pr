@@ -1,0 +1,45 @@
+
+.outset
+{
+  margin-left: 13.5rem;
+  margin-top: 2.8rem;
+  margin-right:0px;
+  margin-bottom: 0px;
+}
+.outset.dark{
+  background-color:#262525;
+  color:white
+}
+.outset.light{
+  background-color: white;
+}
+/* .Main-outlet {
+    transition: background-color 0.3s ease-in-out;
+  } */
+  
+  /* .Main-outlet.light {
+    background-color: white;
+    color: black;
+  }  */
+  
+  .Main-outlet.dark {
+    background-color: #070707;
+    color: white;
+  }
+  .SideBar-Element {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  /* .SideBar-Element.light {
+    background-color: white;
+    color: black;
+  } */
+  
+  .SideBar-Element.dark {
+    background-color:  #070707;
+    color: white;
+  }
