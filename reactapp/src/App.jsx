@@ -6,11 +6,11 @@ import About from "./component/About"
 import Services from "./component/Service"
 import Features from "./component/Features"
 import Contact from "./component/Contact"
-import BookingForm from "./component/Booking"
+import BookingForm from "./dashboard/Booking"
 import Login from "./component/Login"
 import Register_own from "./component/Register"
 import Verification from "./component/Verification"
-import BookingConfirmation from "./component/confirmatioPage"
+import BookingConfirmation from "./dashboard/confirmatioPage"
 import AuthProvider from "./component/AuthProvider"
 import { DarkModeProvider } from "./dashboard/context/DarkModeContext"
 import AdminDashboardPro from "./dashboard/DashboardView"
@@ -27,14 +27,15 @@ function App() {
       <Route path="/service" element={<Services/>}/>
       <Route path="/feature" element={<Features/>}/>
       <Route path="/contact" element={<Contact/>}/>
-      <Route path="/booking" element={<BookingForm/>}/>
       <Route path="/login" element={<Login/>}/>
       <Route path="/register" element={<Register_own/>}/>
       <Route path="/verify" element={<Verification/>}/>
-      <Route path="/confirm" element={<BookingConfirmation/>}/> 
+      
      </Route>
      <Route path="/" element={<DashboardLayout/>}>
      <Route path="/client-dashboard" index element={<AdminDashboardPro/>} />
+     <Route path="/confirm" element={<BookingConfirmation/>}/> 
+     <Route path="/booking" element={<BookingForm/>}/>
      </Route>
     </Routes>
     </Router>

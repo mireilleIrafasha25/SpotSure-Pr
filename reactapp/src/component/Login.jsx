@@ -95,7 +95,7 @@ const Login = ({ HandleLoginForm }) => {
               placeholder="Enter your email"
               required
               style={{
-                width: '100%',
+                width: '300px',
                 padding: '0.5rem 1rem',
                 border: '1px solid #cbd5e0',
                 borderRadius: '0.375rem',
@@ -113,7 +113,7 @@ const Login = ({ HandleLoginForm }) => {
               placeholder="Enter your password"
               required
               style={{
-                width: '100%',
+                width: '300px',
                 padding: '0.5rem 1rem',
                 border: '1px solid #cbd5e0',
                 borderRadius: '0.375rem',
@@ -125,7 +125,7 @@ const Login = ({ HandleLoginForm }) => {
           <button
             type="submit"
             style={{
-              width: '100%',
+              width: '340px',
               padding: '0.75rem',
               backgroundColor: '#FE4801',
               color: 'white',

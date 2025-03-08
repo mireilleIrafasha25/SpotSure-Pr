@@ -1,50 +1,76 @@
+import React, { useState, useEffect } from "react";
+import "./dashboard-styles/dashview.css";
+import { Link } from "react-router-dom";
+import { useDarkMode } from "./context/DarkModeContext";
+import BookingForm from "./Booking"; // Ensure this is correctly imported
+import BookingConfirmation from "./confirmatioPage"; // Ensure this is correctly imported
+import axios from "axios"; // Ensure axios is imported
 
-import React from 'react';
-import "./dashboard-styles/dashview.css"
-import { useState } from 'react';
-import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import {useDarkMode} from "./context/DarkModeContext";
-const AdminDashboardPro=()=>
-{
-    const [userName, setUserName] = useState("");
-    const {theme}=useDarkMode();
-    useEffect(() => {
-      const fetchDashboardData = async () => {
-        try {
-          const token = localStorage.getItem("token");
-          // Soma izina rya user muri localStorage
-    const storedName = localStorage.getItem("userName");
-    if (storedName) {
-      setUserName(storedName);
-    }
-          const response = await axios.get("http://localhost:4000/SpotSure/user/listAll", {
-            headers: { Authorization: `Bearer ${token}` },
-          });
-  
-          setUserName(response.data.userName);
-          setActiveBookings(response.data.activeBookings);
-          setTotalBookings(response.data.totalBookings);
-        } catch (error) {
-          console.error("Error fetching dashboard data:", error);
+const AdminDashboardPro = () => {
+  const [userName, setUserName] = useState("");
+  const { theme } = useDarkMode();
+  const [activeContent, setActiveContent] = useState("dashUser");
+
+  useEffect(() => {
+    const fetchDashboardData = async () => {
+      try {
+        const token = localStorage.getItem("token");
+
+        // Retrieve username from local storage
+        const storedName = localStorage.getItem("userName");
+        if (storedName) {
+          setUserName(storedName);
         }
-      };
-  
-      fetchDashboardData();
-    }, []);
-    return(
-        <div className={`Main-View ${theme}`}>
-             {/* Welcome Message */}
-      <div className={`welcome-message ${theme}`}>Welcome to your Portal, {userName ? userName : "Guest"}👋</div>
 
+        const response = await axios.get("http://localhost:4000/SpotSure/user/listAll", {
+          headers: { Authorization: `Bearer ${token}` },
+        });
 
-{/* Quick Actions */}
-<div className={`quick-actions ${theme}`}>
-  <div  className={`action-button ${theme}`}>🚗 Book Parking</div>
-  <div className={`action-button ${theme}`}>📲 Scan QR Code</div>
-</div>
-            </div>
-       
-    )
-}
+      } catch (error) {
+        console.error("Error fetching dashboard data:", error);
+      }
+    };
+
+    fetchDashboardData();
+  }, []);
+
+  // Function to switch content dynamically
+  const HandleActionClick = (action) => {
+    setActiveContent(action);
+  };
+
+  return (
+    <div className={`Main-View ${theme}`}>
+      {/* Welcome Message */}
+      <div className={`welcome-message ${theme}`}>
+        Welcome to your Portal, {userName ? userName : "Guest"} 👋
+      </div>
+
+      {/* Quick Actions */}
+      <div className={`quick-actions ${theme}`}>
+        <div className="action-button" onClick={() => HandleActionClick("dashUser")}>
+          🏠 Home
+        </div>
+        <div className="action-button" onClick={() => HandleActionClick("BookNow")}>
+          🚗 Book Parking
+        </div>
+        <div className="action-button" onClick={() => HandleActionClick("QRCode")}>
+          📲 Scan QR Code
+        </div>
+      </div>
+
+      {/* Main Active Content */}
+      <div className={`Main-Active-Content ${theme}`}>
+        {activeContent === "dashUser" && (
+          <div>
+            <h3>Welcome to the Dashboard</h3>
+          </div>
+        )}
+        {activeContent === "BookNow" && <BookingForm />}
+        {activeContent === "QRCode" && <BookingConfirmation />}
+      </div>
+    </div>
+  );
+};
+
 export default AdminDashboardPro;

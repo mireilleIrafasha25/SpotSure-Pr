@@ -1,18 +1,106 @@
-.Main-View{
-    width: 1000px;
+/* Main View - Dashboard */
+.Main-View {
+    max-width: 1000px;
+    width: 100%;
     right: 0;
     padding: 20px;
     background-color: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
 }
 
-.welcome-message{
+/* Welcome Message */
+.welcome-message {
     font-size: 24px;
     color: #000;
     margin-bottom: 20px;
-    font-family: "Roboto", "Helvetica Neue";
+    font-family: "Roboto", "Helvetica Neue", sans-serif;
     font-style: normal;
     font-weight: 700;
+    text-align: center;
 }
-.welcome-message.dark{
+
+.welcome-message.dark {
     color: white;
+}
+
+/* Quick Actions Section */
+.quick-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    background: white;
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+}
+
+.quick-actions.dark {
+    background: #2a2a2a;
+}
+
+.action-button {
+    background: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+}
+
+.action-button:hover {
+    background: #0056b3;
+}
+
+.action-button.dark {
+    background: #444;
+    color: #fff;
+}
+
+.action-button.dark:hover {
+    background: #666;
+}
+
+/* Active Content Section */
+.Main-Active-Content {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 800px;
+    min-height: 400px;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.Main-Active-Content.dark {
+    background-color: #2a2a2a;
+    color: white;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .Main-View {
+        padding: 10px;
+    }
+
+    .quick-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .action-button {
+        width: 100%;
+        text-align: center;
+    }
+
+    .Main-Active-Content {
+        width: 95%;
+        min-height: auto;
+        padding: 15px;
+    }
 }
