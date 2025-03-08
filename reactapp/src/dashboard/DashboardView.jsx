@@ -4,11 +4,11 @@ import "./dashboard-styles/dashview.css"
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import {useDarkMode} from "./context/DarkModeContext";
 const AdminDashboardPro=()=>
 {
     const [userName, setUserName] = useState("");
-    const [activeBookings, setActiveBookings] = useState(0);
-    const [totalBookings, setTotalBookings] = useState(0);
+    const {theme}=useDarkMode();
     useEffect(() => {
       const fetchDashboardData = async () => {
         try {
@@ -33,27 +33,15 @@ const AdminDashboardPro=()=>
       fetchDashboardData();
     }, []);
     return(
-        <div className='Main-View'>
+        <div className={`Main-View ${theme}`}>
              {/* Welcome Message */}
-      <h2 className="welcome-message">Welcome, {userName ? userName : "Guest"}👋</h2>
+      <div className={`welcome-message ${theme}`}>Welcome to your Portal, {userName ? userName : "Guest"}👋</div>
 
-{/* Booking Summary */}
-<div className="booking-summary">
-  <div className="booking-card">
-    <h3>Active Parking</h3>
-    <p>{activeBookings}</p>
-  </div>
-  <div className="booking-card">
-    <h3>Total Parkings</h3>
-    <p>{totalBookings}</p>
-  </div>
-</div>
 
 {/* Quick Actions */}
-<div className="quick-actions">
-  <Link to="/book-parking" className="action-button">🚗 Book Parking</Link>
-  <Link to="/history" className="action-button">📜 View History</Link>
-  <Link to="/scan-qr" className="action-button">📲 Scan QR Code</Link>
+<div className={`quick-actions ${theme}`}>
+  <div  className={`action-button ${theme}`}>🚗 Book Parking</div>
+  <div className={`action-button ${theme}`}>📲 Scan QR Code</div>
 </div>
             </div>
        

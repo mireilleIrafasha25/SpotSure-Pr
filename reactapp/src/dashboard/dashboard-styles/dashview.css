@@ -1,5 +1,18 @@
 .Main-View{
-    width: 940px;
+    width: 1000px;
     right: 0;
+    padding: 20px;
     background-color: none;
+}
+
+.welcome-message{
+    font-size: 24px;
+    color: #000;
+    margin-bottom: 20px;
+    font-family: "Roboto", "Helvetica Neue";
+    font-style: normal;
+    font-weight: 700;
+}
+.welcome-message.dark{
+    color: white;
 }
