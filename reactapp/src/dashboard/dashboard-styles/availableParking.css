@@ -1,0 +1,107 @@
+/* Default Light Theme */
+.parking-container {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    padding: 20px;
+  }
+  
+  .parking-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .parking-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  
+  .parking-image {
+    flex: 1;
+    max-width: 300px;
+    margin-right: 20px;
+  }
+  
+  .parking-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .parking-description {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .parking-description h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .parking-description p {
+    font-size: 1rem;
+    margin: 5px 0;
+  }
+  
+  .parking-description strong {
+    font-weight: bold;
+  }
+  
+  /* Dark Mode */
+  .parking-container.dark {
+    background-color: #121212;
+    color: #fff;
+  }
+  
+  .parking-item.dark {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #444;
+  }
+  
+  .parking-description.dark strong {
+    color: #ddd;
+  }
+  
+  .parking-image img {
+    border-radius: 8px;
+    border: 2px solid #fff;
+  }
+  
+  /* Responsive Design for Mobile Devices */
+  @media screen and (max-width: 768px) {
+    .parking-item {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .parking-image {
+      max-width: 100%;
+      margin-bottom: 15px;
+    }
+  
+    .parking-description {
+      flex: 1;
+      text-align: center;
+    }
+  
+    .parking-description p {
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .parking-description h3 {
+      font-size: 1.2rem;
+    }
+  }
+  

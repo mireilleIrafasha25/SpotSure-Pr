@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/booking.css";
 
 const BookingForm = () => {
@@ -12,11 +13,16 @@ const BookingForm = () => {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-
+const navigate=useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
+    // Save destinationName in localStorage
+    localStorage.setItem("destinationName", formData.destination);
     console.log("Booking Data:", formData);
+    // Proceed to next page (for example)
     alert("Booking Successful!");
+    // Redirect to parking spots page
+    navigate("/availableParking")
   };
 
   return (
@@ -38,7 +44,7 @@ const BookingForm = () => {
           type="text"
           name="plateNumber"
           placeholder="Enter your plate number"
-          value={formData.carPark}
+          value={formData.plateNumber}
           onChange={handleChange}
           required
         />

@@ -15,6 +15,7 @@ import AuthProvider from "./component/AuthProvider"
 import { DarkModeProvider } from "./dashboard/context/DarkModeContext"
 import AdminDashboardPro from "./dashboard/DashboardView"
 import DashboardLayout from "./dashboard/dashboardLayout"
+import ParkingSpots from "./dashboard/AvailableParkingSpots"
 function App() {
   return (
     <DarkModeProvider>
@@ -36,6 +37,7 @@ function App() {
      <Route path="/client-dashboard" index element={<AdminDashboardPro/>} />
      <Route path="/confirm" element={<BookingConfirmation/>}/> 
      <Route path="/booking" element={<BookingForm/>}/>
+     <Route path="/availableParking" element={<ParkingSpots/>}/>
      </Route>
     </Routes>
     </Router>
