@@ -1,6 +1,6 @@
 import React from "react";
 import { QRCodeCanvas } from "qrcode.react";
-import "../styles/confirmationpage.css";
+import "./dashboard-styles/confirmationPage.css";
 
 const BookingConfirmation = () => {
   const booking = {

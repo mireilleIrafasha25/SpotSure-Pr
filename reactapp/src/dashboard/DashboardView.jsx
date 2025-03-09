@@ -5,7 +5,9 @@ import { useDarkMode } from "./context/DarkModeContext";
 import BookingForm from "./Booking"; // Ensure this is correctly imported
 import BookingConfirmation from "./confirmatioPage"; // Ensure this is correctly imported
 import axios from "axios"; // Ensure axios is imported
-
+import { IoIosHome } from "react-icons/io";
+import { FaCarAlt } from "react-icons/fa";
+import { BsQrCode } from "react-icons/bs";
 const AdminDashboardPro = () => {
   const [userName, setUserName] = useState("");
   const { theme } = useDarkMode();
@@ -25,7 +27,7 @@ const AdminDashboardPro = () => {
         const response = await axios.get("http://localhost:4000/SpotSure/user/listAll", {
           headers: { Authorization: `Bearer ${token}` },
         });
-
+     
       } catch (error) {
         console.error("Error fetching dashboard data:", error);
       }
@@ -49,13 +51,13 @@ const AdminDashboardPro = () => {
       {/* Quick Actions */}
       <div className={`quick-actions ${theme}`}>
         <div className="action-button" onClick={() => HandleActionClick("dashUser")}>
-          🏠 Home
+          <span><IoIosHome/></span> <span>Basic Info</span>
         </div>
         <div className="action-button" onClick={() => HandleActionClick("BookNow")}>
-          🚗 Book Parking
+          <FaCarAlt/> Book Parking
         </div>
         <div className="action-button" onClick={() => HandleActionClick("QRCode")}>
-          📲 Scan QR Code
+          <BsQrCode/>Scan QR Code
         </div>
       </div>
 

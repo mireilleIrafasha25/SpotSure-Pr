@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../styles/booking.css";
+import "./dashboard-styles/booking.css";
 
 const BookingForm = () => {
   const [formData, setFormData] = useState({

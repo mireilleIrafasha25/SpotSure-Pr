@@ -1,7 +1,7 @@
 /* Default Light Theme */
 .parking-container {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
+    background-color: white;
     color: #333;
     padding: 20px;
   }
@@ -76,7 +76,24 @@
     border-radius: 8px;
     border: 2px solid #fff;
   }
-  
+  .spaceButton{
+    background-color: orangered;
+    color: white;
+    width: 200px;
+    border: none;
+    border-radius: 10px;
+    font-size:18px;
+    font-family: "Roboto";
+    font-style: normal;
+    cursor: pointer;
+    margin-top: 10px;
+    height:40px
+
+  }
+  .spaceButton:hover{
+    background-color: #022F4A;
+    color: white;
+  }
   /* Responsive Design for Mobile Devices */
   @media screen and (max-width: 768px) {
     .parking-item {
