@@ -10,7 +10,9 @@ const AuthProvider = ({ children }) => {
   const login = (role) => setUserRole(role);
   const logout = () => {
     localStorage.removeItem("token");   // Siba token muri localStorage
-    localStorage.removeItem("userName"); // Siba izina rya user
+    localStorage.removeItem("userName"); 
+    localStorage.removeItem("userEmail");
+    // Siba izina rya user
     setUserRole(null);
   };
   

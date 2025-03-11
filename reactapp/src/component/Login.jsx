@@ -29,15 +29,17 @@ const Login = ({ HandleLoginForm }) => {
       const decoded = jwt_decode(token);
       const userRole = decoded.role;
       const userName=decoded.Name;
+      const userEmail=decoded.email;
        // Bika izina muri localStorage
     localStorage.setItem("userName", userName);
+    localStorage.setItem("userEmail", userEmail);
       // Close modal first
       HandleLoginForm();
 
       // Navigate based on the user role
       if (userRole === "admin") {
         navigate('/dashboard123');
-      } else if (userRole === "user") {
+      } else if (userRole === "carOwner") {
         navigate('/client-dashboard');
       } else {
         navigate('/none');

@@ -35,7 +35,7 @@
 /* Quick Actions Section */
 .quick-actions {
     display: flex;
-    gap: 150px;
+    gap: 400px;
     background: white;
     padding: 12px;
     border-radius: 8px;
@@ -50,7 +50,7 @@
 
 .action-button {
     color: black;
-    padding: 10px 15px;
+    padding: 10px 35px;
     cursor: pointer;
     width:auto;
     display: flex;
@@ -59,6 +59,18 @@
 }
 .step1.dark{
     color: white;
+}
+.startWith{
+    font-size: 16px;
+    font-weight: 700;
+    font-style: normal;
+    font-family: "Roboto";   
+}
+.endWith{
+    font-size: 14px;
+    font-weight: 700;
+    font-style: normal;
+    font-family: "Roboto";
 }
 .action-button.dark {
     background: #444;
