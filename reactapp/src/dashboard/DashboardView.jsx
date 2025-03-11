@@ -5,14 +5,12 @@ import { useDarkMode } from "./context/DarkModeContext";
 import BookingForm from "./Booking"; // Ensure this is correctly imported
 import BookingConfirmation from "./confirmatioPage"; // Ensure this is correctly imported
 import axios from "axios"; // Ensure axios is imported
-import { IoIosHome } from "react-icons/io";
-import { FaCarAlt } from "react-icons/fa";
-import { BsQrCode } from "react-icons/bs";
+
+
 const AdminDashboardPro = () => {
   const [userName, setUserName] = useState("");
   const { theme } = useDarkMode();
   const [activeContent, setActiveContent] = useState("dashUser");
-
   useEffect(() => {
     const fetchDashboardData = async () => {
       try {
@@ -45,28 +43,28 @@ const AdminDashboardPro = () => {
     <div className={`Main-View ${theme}`}>
       {/* Welcome Message */}
       <div className={`welcome-message ${theme}`}>
-        Welcome to your Portal, {userName ? userName : "Guest"} 👋
+        <img src="/CarHomeBg.jpg" alt="" className={`ProfImage ${theme}`}/>
+        <div className={`dashName ${theme}`}>{userName ? userName : "Guest"} <br/>
+        <div>Email</div>
+        </div>
       </div>
 
       {/* Quick Actions */}
       <div className={`quick-actions ${theme}`}>
         <div className="action-button" onClick={() => HandleActionClick("dashUser")}>
-          <span><IoIosHome/></span> <span>Basic Info</span>
+         <div className={`step1 ${theme}`}><span>Step 1</span><span> Find Near Parking</span></div>
         </div>
         <div className="action-button" onClick={() => HandleActionClick("BookNow")}>
-          <FaCarAlt/> Book Parking
+        <div className={`step1 ${theme}`}><span>Step 2</span><span> Booking Form</span></div>
         </div>
         <div className="action-button" onClick={() => HandleActionClick("QRCode")}>
-          <BsQrCode/>Scan QR Code
+        <div className={`step1 ${theme}`}><span>Step 3</span><span> QR CODE</span></div>
         </div>
       </div>
-
       {/* Main Active Content */}
       <div className={`Main-Active-Content ${theme}`}>
         {activeContent === "dashUser" && (
-          <div>
-            <h3>Welcome to the Dashboard</h3>
-          </div>
+          <BookingForm />
         )}
         {activeContent === "BookNow" && <BookingForm />}
         {activeContent === "QRCode" && <BookingConfirmation />}

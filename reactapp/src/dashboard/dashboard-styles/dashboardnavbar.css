@@ -23,33 +23,18 @@
     color: white;
 }
 
-
-.SearchDiv2{
+.step1{
     display: flex;
-    flex-direction: row;
-    background-color:white;
-    border-radius: 5px;
-    border: none;
-    padding: 10px;
-    height:20px;
-    margin-top: 5px;
-   
+    flex-direction: column;
 }
-.SearchDiv2 .search-input{
-    background: none;
-    border: none;
-    width: 90px;
-}
-.SearchDiv2.dark{
-    background-color: #333;
-    color: white;
-}
+
+
 .IconDiv2{
     margin-top: 10px;
     display: flex;
     flex-direction: row;
     gap: 20px;
-    margin-left: 600px;
+    margin-left: 730px;
 }
 .profileImage{
     width: 25px;
@@ -64,24 +49,6 @@
 }
 
 .Sun-Icon.dark{
-    color: white;
-}
-.Settings-Icon{
-    color: gray;
-    font-size: 14px;
-    cursor: pointer;
-}
-
-.Settings-Icon.dark{
-    color: white;
-}
-.Flash-Icon{
-    color: gray;
-    font-size: 14px;
-    cursor: pointer;
-}
-
-.Flash-Icon.dark{
     color: white;
 }
 

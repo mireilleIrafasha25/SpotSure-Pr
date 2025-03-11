@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./dashboard-styles/booking.css";
-
+import {useDarkMode} from "./context/DarkModeContext"
 const BookingForm = () => {
   const [formData, setFormData] = useState({
     destination: "",
@@ -18,9 +18,9 @@ const navigate=useNavigate();
     // Redirect to parking spots page
     navigate("/availableParking")
   };
-
+   const {theme}=useDarkMode();
   return (
-    <div className="booking-container">
+    <div className={`booking-container ${theme}`}>
       <h2>Find Near Parking Available</h2>
       <form onSubmit={handleSubmit}>
         <label>Destination</label>

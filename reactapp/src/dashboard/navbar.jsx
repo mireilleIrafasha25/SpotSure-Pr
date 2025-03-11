@@ -29,10 +29,6 @@ return(
         <div className="Main-Navbar2">
             <div className={`NavBarDown2 ${theme}`}>
             <IoMenu size={24} className={`Menu-Icon ${theme}`}/>
-             <div className={`SearchDiv2 ${theme}`}>
-               <CiSearch className={`search-icon${theme}`}/>
-               <input type="text" placeholder="ctrl + K" className="search-input"/>
-             </div>
              <div className={`IconDiv2 ${theme}`}>
                  <MdSunny size={24} className={`Sun-Icon ${theme}`} onClick={toggleDropdown}/>
                  {isDropdownOpen && (

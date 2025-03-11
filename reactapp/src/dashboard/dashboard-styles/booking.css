@@ -9,7 +9,16 @@
     text-align: center;
     margin-top: 0px;
   }
-  
+  .booking-container.dark{
+    background-color: black;
+    color: white;
+  }
+  .booking-container.dark h2{
+    color: white;
+  }
+  .booking-container.dark label{
+    color: white;
+  }
   /* Title */
   .booking-container h2 {
     font-size: 22px;
