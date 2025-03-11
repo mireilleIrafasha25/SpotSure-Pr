@@ -4,10 +4,7 @@ import "./dashboard-styles/booking.css";
 
 const BookingForm = () => {
   const [formData, setFormData] = useState({
-    name: "",
-    plateNumber: "",
     destination: "",
-    phoneNumber: "",
   });
 
   const handleChange = (e) => {
@@ -18,53 +15,20 @@ const navigate=useNavigate();
     e.preventDefault();
     // Save destinationName in localStorage
     localStorage.setItem("destinationName", formData.destination);
-    console.log("Booking Data:", formData);
-    // Proceed to next page (for example)
-    alert("Booking Successful!");
     // Redirect to parking spots page
     navigate("/availableParking")
   };
 
   return (
     <div className="booking-container">
-      <h2>Book Your Parking Spot</h2>
+      <h2>Find Near Parking Available</h2>
       <form onSubmit={handleSubmit}>
-        <label>Name</label>
-        <input
-          type="text"
-          name="name"
-          placeholder="Enter your name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-        />
-
-        <label>Plate Number</label>
-        <input
-          type="text"
-          name="plateNumber"
-          placeholder="Enter your plate number"
-          value={formData.plateNumber}
-          onChange={handleChange}
-          required
-        />
-
         <label>Destination</label>
         <input
           type="text"
           name="destination"
           placeholder="Enter your destination"
           value={formData.destination}
-          onChange={handleChange}
-          required
-        />
-
-        <label>Phone Number</label>
-        <input
-          type="tel"
-          name="phoneNumber"
-          placeholder="Enter your phone number"
-          value={formData.phoneNumber}
           onChange={handleChange}
           required
         />
