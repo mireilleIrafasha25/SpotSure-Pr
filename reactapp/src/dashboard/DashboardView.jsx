@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./dashboard-styles/dashview.css";
 import { useDarkMode } from "./context/DarkModeContext";
-import BookingForm from "./Booking"; // Ensure this is correctly imported
+import DestinationForm from "./DestinationForm"; // Ensure this is correctly imported
 import BookingConfirmation from "./confirmatioPage"; // Ensure this is correctly imported
 import axios from "axios"; // Ensure axios is imported
 
@@ -64,7 +64,7 @@ const AdminDashboardPro = () => {
       {/* Main Active Content */}
       <div className={`Main-Active-Content ${theme}`}>
         {activeContent === "dashUser" && (
-          <BookingForm />
+          <DestinationForm />
         )}
         {activeContent === "QRCode" && <BookingConfirmation />}
       </div>

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./dashboard-styles/booking.css";
 import {useDarkMode} from "./context/DarkModeContext"
-const BookingForm = () => {
+const DestinationForm = () => {
   const [formData, setFormData] = useState({
     destination: "",
   });
@@ -39,4 +39,4 @@ const navigate=useNavigate();
   );
 };
 
-export default BookingForm;
+export default DestinationForm;

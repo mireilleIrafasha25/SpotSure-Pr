@@ -6,7 +6,6 @@ import About from "./component/About"
 import Services from "./component/Service"
 import Features from "./component/Features"
 import Contact from "./component/Contact"
-import BookingForm from "./dashboard/Booking"
 import Login from "./component/Login"
 import Register_own from "./component/Register"
 import Verification from "./component/Verification"
@@ -16,6 +15,7 @@ import { DarkModeProvider } from "./dashboard/context/DarkModeContext"
 import AdminDashboardPro from "./dashboard/DashboardView"
 import DashboardLayout from "./dashboard/dashboardLayout"
 import ParkingSpots from "./dashboard/AvailableParkingSpots"
+import DestinationForm from "./dashboard/DestinationForm"
 function App() {
   return (
     <DarkModeProvider>
@@ -36,7 +36,7 @@ function App() {
      <Route path="/" element={<DashboardLayout/>}>
      <Route path="/client-dashboard" index element={<AdminDashboardPro/>} />
      <Route path="/confirm" element={<BookingConfirmation/>}/> 
-     <Route path="/booking" element={<BookingForm/>}/>
+     <Route path="/destination" element={<DestinationForm/>}/>
      <Route path="/availableParking" element={<ParkingSpots/>}/>
      </Route>
     </Routes>
