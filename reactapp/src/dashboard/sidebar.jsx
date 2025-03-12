@@ -14,7 +14,6 @@ const SideBar=()=>
     const {theme}=useDarkMode();
 const navigate=useNavigate();
   const handleLogout = () => {
-    console.log("Logout called"); 
     logout();  // Call the logout function
     navigate("/");  // Redirect to the home page after logging out
   };
@@ -27,9 +26,9 @@ const navigate=useNavigate();
             </div>  
             <div className="Main-Icon">
             <Link to="/client-dashboard" style={{textDecoration:"none"}}><div className={`icon ${theme}}`}><MdOutlineAnalytics/><span >Home</span></div></Link>
-           <Link to="/add-product" style={{textDecoration:"none"}}><div className={`icon ${theme}`}><MdOutlineProductionQuantityLimits/><span >Booking</span></div></Link> 
-           <Link to="/report" style={{textDecoration:"none"}}><div className={`icon ${theme}`}><CgMail/><span>Payment</span></div> </Link>
-           <Link to="/UserDash" style={{textDecoration:"none"}}>  <div className={`icon ${theme}`}><FiUser/><span>Parking Spot Finder</span></div> </Link>
+           <Link to="/booking" style={{textDecoration:"none"}}><div className={`icon ${theme}`}><MdOutlineProductionQuantityLimits/><span >Booking</span></div></Link> 
+           <Link to="/payment" style={{textDecoration:"none"}}><div className={`icon ${theme}`}><CgMail/><span>Payment</span></div> </Link>
+           <Link to="/destination" style={{textDecoration:"none"}}>  <div className={`icon ${theme}`}><FiUser/><span>Parking Spot Finder</span></div> </Link>
             
             </div>
             <div className="Main-Icon2">

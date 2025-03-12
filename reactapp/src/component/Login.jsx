@@ -4,11 +4,10 @@ import { IoClose } from "react-icons/io5";
 import Register_own from './Register';
 import { useNavigate } from 'react-router-dom';
 import jwt_decode from 'jwt-decode';
-
+import {Notify} from "notiflix"
 const Login = ({ HandleLoginForm }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(false);
   const [model, useModel] = useState(false);  // For registration form modal
 
@@ -23,14 +22,15 @@ const Login = ({ HandleLoginForm }) => {
         email,
         password,
       });
-
+     Notify.success("Login successful")
       const token = response.data.token;
       localStorage.setItem("token", token);
       const decoded = jwt_decode(token);
       const userRole = decoded.role;
       const userName=decoded.Name;
       const userEmail=decoded.email;
-       // Bika izina muri localStorage
+      localStorage.setItem("user", JSON.stringify(response.data.user));
+       // save name in localStorage
     localStorage.setItem("userName", userName);
     localStorage.setItem("userEmail", userEmail);
       // Close modal first
@@ -42,11 +42,11 @@ const Login = ({ HandleLoginForm }) => {
       } else if (userRole === "carOwner") {
         navigate('/client-dashboard');
       } else {
-        navigate('/none');
+        Notify.success("You are not allowed to explore this platform");
       }
 
     } catch (error) {
-      setMessage(error.response?.data?.message || 'Login Failed');
+      Notify.success(error.response?.data?.message || 'Login Failed');
     } finally {
       setLoading(false);
     }
@@ -141,7 +141,6 @@ const Login = ({ HandleLoginForm }) => {
             {loading ? 'Loading...' : 'Login'}
           </button>
         </form>
-        {message && <p style={{ marginTop: '1rem', color: '#e74c3c' }}>{message}</p>}
         <p style={{ marginTop: '1rem', textAlign: 'center', color: '#718096' }}>
           Don’t have an account?{' '}
           <button

@@ -16,6 +16,7 @@ import AdminDashboardPro from "./dashboard/DashboardView"
 import DashboardLayout from "./dashboard/dashboardLayout"
 import ParkingSpots from "./dashboard/AvailableParkingSpots"
 import DestinationForm from "./dashboard/DestinationForm"
+import Payment from "./dashboard/Payment"
 function App() {
   return (
     <DarkModeProvider>
@@ -38,6 +39,7 @@ function App() {
      <Route path="/confirm" element={<BookingConfirmation/>}/> 
      <Route path="/destination" element={<DestinationForm/>}/>
      <Route path="/availableParking" element={<ParkingSpots/>}/>
+     <Route path="/payment" element={<Payment/>}/>
      </Route>
     </Routes>
     </Router>

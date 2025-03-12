@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { Link,useNavigate } from "react-router-dom";
 import "../styles/navbar.css";
 import Login from "./Login";
@@ -6,7 +6,7 @@ import Register_own from "./Register";
 const NavBar = () => {
   const [modal,useModal]=useState(false);
     const [model,useModel] = useState(false);
-    const navigate=useNavigate();
+    const [user, setUser] = useState(null);
     const HandleLoginForm=()=>
     {
         useModal(!modal)
@@ -20,7 +20,12 @@ const NavBar = () => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+    }
+  }, []);
   return (
     <header className="header_section">
          {modal && <Login HandleLoginForm={HandleLoginForm} />}
@@ -53,8 +58,27 @@ const NavBar = () => {
               </li>
             </ul>
             <div className="LoginAndRegister">
-              <button onClick={HandleLoginForm}>LOGIN</button>
-              <button onClick={HandleSignUpForm}>REGISTER</button>
+            {user ? (
+          <div className="UserPrandName">
+            
+              <img
+                src="/no-profilebg.png"
+                alt="Profile"
+                width="40"
+                height="40"
+                style={{ borderRadius: "50%" }}
+              />
+            
+            <div className="userName2">{user.Name}</div>
+           
+          </div>
+        ) : (
+          <>
+            <button onClick={HandleLoginForm}>LOGIN</button>
+            <button onClick={HandleSignUpForm}>REGISTER</button>
+          </>
+        )}
+             
             </div>
           </div>
         </nav>

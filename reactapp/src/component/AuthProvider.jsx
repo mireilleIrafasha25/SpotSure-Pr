@@ -12,6 +12,7 @@ const AuthProvider = ({ children }) => {
     localStorage.removeItem("token");   // Siba token muri localStorage
     localStorage.removeItem("userName"); 
     localStorage.removeItem("userEmail");
+    localStorage.removeItem("user")
     // Siba izina rya user
     setUserRole(null);
   };
