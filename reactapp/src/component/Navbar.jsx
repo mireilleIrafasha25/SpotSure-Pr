@@ -3,10 +3,18 @@ import { Link,useNavigate } from "react-router-dom";
 import "../styles/navbar.css";
 import Login from "./Login";
 import Register_own from "./Register";
+import { useAuth } from "./AuthProvider";
 const NavBar = () => {
+  const {logout}=useAuth();
   const [modal,useModal]=useState(false);
     const [model,useModel] = useState(false);
     const [user, setUser] = useState(null);
+    const navigate=useNavigate();
+    const [isDropdownOpen,setIsDropdownOpen] = useState(false); 
+    const toggleDropdown=()=>
+    {
+      setIsDropdownOpen(!isDropdownOpen);
+    }
     const HandleLoginForm=()=>
     {
         useModal(!modal)
@@ -14,6 +22,11 @@ const NavBar = () => {
     const HandleSignUpForm=()=>
     {
         useModel(!model)
+    }
+    const HandleLogout=()=>
+    {
+      logout();
+      navigate ("/");
     }
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -59,7 +72,7 @@ const NavBar = () => {
             </ul>
             <div className="LoginAndRegister">
             {user ? (
-          <div className="UserPrandName">
+          <div className="UserPrandName" onClick={toggleDropdown}>
             
               <img
                 src="/no-profilebg.png"
@@ -70,7 +83,16 @@ const NavBar = () => {
               />
             
             <div className="userName2">{user.Name}</div>
-           
+          
+              {isDropdownOpen && (
+                           <div className='theme_dropdown1'>
+                             <ul>
+                               <li> Dashboard</li>
+                               <li onClick={HandleLogout}> Logout</li>
+                              <Link to="/" style={{textDecoration:"none"}}> <li>Home</li></Link>
+                             </ul>
+                           </div>
+                         )}
           </div>
         ) : (
           <>
