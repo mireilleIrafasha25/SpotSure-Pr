@@ -51,7 +51,10 @@ const ParkingSpots = () => {
   if (loading) {
     return <div>Loading...</div>;
   }
-
+  const handleBookingSelection = (parkingId) => {
+    localStorage.setItem("selectedParkingId", parkingId);
+  
+  };
   return (
     <div className={`parking-container ${theme}`}>
       <h2>Welcome to Available spots {userName?userName:"Guest"}</h2>
@@ -74,9 +77,9 @@ const ParkingSpots = () => {
                 <p><strong>Parking Size:</strong> {spot.parkingSizes}</p>
                 <p><strong>Nearby Buildings:</strong> {spot.nearbyBuildings.join(", ")}</p>
                 <p><strong>Price per Hour:</strong> {spot.pricePerHour} RWF</p>
-                <Link to="/confirm"><button type="submit" className={`spaceButton ${theme}`}>
-                  Book space here
-                </button></Link>
+                <Link to="/booking">
+                    <button type="submit"  className={`spaceButton ${theme}`} onClick={() => handleBookingSelection(spot._id)}>  Book space here </button>
+            </Link>
               </div>
             </div>
           ))}
