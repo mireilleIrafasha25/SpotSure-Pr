@@ -74,15 +74,18 @@
     font-style: normal;
     font-family: "Roboto", sans-serif;
   }
-  .LoginAndRegister button {
+  .LoginButton {
     background-color: #fe4801;
-    width: 90px;
+    width: 100px;
     height: 30px;
     color: white;
     border-radius: 5px;
     cursor: pointer;
     border: none;
     margin-top: 7px;
+  }
+  .LoginButton:hover{
+    background-color: rgb(178, 51, 5);
   }
   .theme_dropdown1 {
     position: absolute;

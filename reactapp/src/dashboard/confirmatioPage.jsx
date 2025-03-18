@@ -1,8 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { QRCodeCanvas } from "qrcode.react";
 import "./dashboard-styles/confirmationPage.css";
-
+import axios from "axios";
+import { Notify } from "notiflix";
 const BookingConfirmation = () => {
+  const [parkingName,setParkingName]=useState('');
+  const [bookings,setBooking] = useState('')
+  const parkingId=localStorage.getItem('selectedParkingId')
+  useEffect(() =>{
+  const fetchBooking = async () => {
+    try {
+      const response = await axios.get(`http://localhost:4000/SpotSure/booking/getBooking/${bookingId}`);
+      setBooking(response.data.bookings);
+      Notify.success(response.data.message || "");
+    } catch (error) {
+      Notify.failure(error.response?.data?.message || "Failed to fetch products");
+    }
+  };
+  fetchBooking();
+}, []);
   const booking = {
     _id: "ABC123",
     parkingName: "Parking Spot 1",

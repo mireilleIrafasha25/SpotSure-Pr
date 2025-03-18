@@ -72,11 +72,11 @@ const ParkingSpots = () => {
                 <p><strong>Location:</strong> {spot.location}</p>
                 <p><strong>Number of Spaces:</strong> {spot.numberOfSpaces}</p>
                 <p><strong>Available Spaces:</strong> {spot.availableSpaces}</p>
-                <p><strong>Parking Size:</strong> {spot.parkingSizes}</p>
-                <p><strong>Nearby Buildings:</strong> {spot.nearbyBuildings.join(", ")}</p>
+                {/* <p><strong>Parking Size:</strong> {spot.parkingSizes}</p> */}
+                {/* <p><strong>Nearby Buildings:</strong> {spot.nearbyBuildings.join(", ")}</p> */}
                 <p><strong>Price per Hour:</strong> {spot.pricePerHour} RWF</p>
                 <Link to="/booking">
-                    <button type="submit"  className={`spaceButton ${theme}`} onClick={() => handleBookingSelection(spot._id)}>  Book space here </button>
+                    <button type="submit"  className={`spaceButton ${theme}`} onClick={() => handleBookingSelection(spot._id,spot.name)}>  Book space here </button>
             </Link>
               </div>
             </div>

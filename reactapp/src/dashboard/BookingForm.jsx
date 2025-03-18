@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import "./dashboard-styles/bookingForm.css";
+import {Notify} from "notiflix"
+import { useNavigate } from "react-router-dom";
 const BookingForm = () => {
   const [bookingDuration, setBookingDuration] = useState("");
   const [plateNumber, setPlateNumber] = useState("");
   const [parkingid, setParkingid] = useState("");
-  const [message, setMessage] = useState(null);
-
+const navigate=useNavigate();
   useEffect(() => {
     // Retrieve the parking ID from localStorage
     const storedParkingId = localStorage.getItem("selectedParkingId");
@@ -18,8 +19,7 @@ const BookingForm = () => {
     e.preventDefault();
 
     if (!parkingid) {
-      setMessage({ type: "error", text: "No parking spot selected!" });
-      return;
+      Notify.failure( "No parking spot selected!");
     }
 
     const bookingData = { bookingDuration, parkingid, plateNumber };
@@ -39,19 +39,17 @@ const BookingForm = () => {
         throw new Error(data.message || "Failed to book parking");
       }
 
-      setMessage({ type: "success", text: data.message });
-      localStorage.removeItem("selectedParkingId"); // Clear selected parking after booking
+      Notify.success(data.message);
+
+      navigate('/confirm')
     } catch (error) {
-      setMessage({ type: "error", text: error.message });
+      Notify.failure( error.message);
     }
   };
 
   return (
     <div className="booking-container">
       <h2>Book a Parking Spot</h2>
-      {message && (
-        <div className={`message ${message.type}`}>{message.text}</div>
-      )}
       <form onSubmit={handleSubmit}>
         <label>Booking Duration (Hours):</label>
         <input
@@ -61,8 +59,8 @@ const BookingForm = () => {
           required
         />
 
-        <label>Selected Parking ID:</label>
-        <input type="text" value={parkingid} disabled />
+        <label>Selected Parking </label>
+        <input type="password" value={parkingid} disabled />
 
         <label>Plate Number:</label>
         <input
