@@ -30,9 +30,6 @@ const ParkingSpots = () => {
           );
           setParkingSpots(response.data.data); // Assuming data is an array of parking spots
 
-             //remove destinationName after fetch successful
-        // localStorage.removeItem("destinationName");
-
         } catch (err) {
           console.error("Error fetching parking spots:", err);
           setError("Failed to load parking spots.");
@@ -51,8 +48,9 @@ const ParkingSpots = () => {
   if (loading) {
     return <div>Loading...</div>;
   }
-  const handleBookingSelection = (parkingId) => {
+  const handleBookingSelection = (parkingId,parkingName) => {
     localStorage.setItem("selectedParkingId", parkingId);
+    localStorage.setItem("selectedParkingName",parkingName)
   
   };
   return (
