@@ -23,7 +23,6 @@ const navigate=useNavigate();
     }
 
     const bookingData = { bookingDuration, parkingid, plateNumber };
-
     try {
       const response = await fetch("http://localhost:4000/SpotSure/booking/newBooking", {
         method: "POST",
@@ -40,8 +39,11 @@ const navigate=useNavigate();
       }
 
       Notify.success(data.message);
+    // ✅ Store booking ID for confirmation page
+        localStorage.setItem("bookingId", data.data._id);
 
-      navigate('/confirm')
+     // ✅ Redirect user to confirmation page for QR Code scanning
+        navigate("/confirm");
     } catch (error) {
       Notify.failure( error.message);
     }

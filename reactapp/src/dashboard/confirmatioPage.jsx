@@ -1,51 +1,58 @@
 import React, { useEffect, useState } from "react";
 import { QRCodeCanvas } from "qrcode.react";
-import "./dashboard-styles/confirmationPage.css";
+import "./dashboard-styles/confirmationpage.css";
 import axios from "axios";
 import { Notify } from "notiflix";
-const BookingConfirmation = () => {
-  const [parkingName,setParkingName]=useState('');
-  const [bookings,setBooking] = useState('')
-  const parkingId=localStorage.getItem('selectedParkingId')
-  useEffect(() =>{
-  const fetchBooking = async () => {
-    try {
-      const response = await axios.get(`http://localhost:4000/SpotSure/booking/getBooking/${bookingId}`);
-      setBooking(response.data.bookings);
-      Notify.success(response.data.message || "");
-    } catch (error) {
-      Notify.failure(error.response?.data?.message || "Failed to fetch products");
-    }
-  };
-  fetchBooking();
-}, []);
-  const booking = {
-    _id: "ABC123",
-    parkingName: "Parking Spot 1",
-    location: "Kigali",
-    parkingSpotId: "PS01",
-    bookingDate: "2022-01-15",
-    bookingDuration: 2,
-    totalPrice: 4000,
-  };
 
-  const qrValue = `BookingID: ${booking._id}`;
-  console.log("QR Code Value:", qrValue); // Check if the value is correct
+const BookingConfirmation = () => {
+  const [booking, setBooking] = useState(null); // State for booking data
+  const bookingId = localStorage.getItem("bookingId");
+
+  useEffect(() => {
+    const fetchBooking = async () => {
+      try {
+        const response = await axios.get(
+          `http://localhost:4000/SpotSure/booking/getBooking/${bookingId}`
+        );
+        setBooking(response.data.data); // ✅ Use actual API response
+        Notify.success("Booking details loaded!");
+      } catch (error) {
+        Notify.failure(
+          error.response?.data?.message || "Failed to fetch booking details"
+        );
+      }
+    };
+    fetchBooking();
+  }, [bookingId]);
+
+  if (!booking) {
+    return <p>Loading booking details...</p>;
+  }
+
+  // QR Code should contain useful information for verification
+  const qrValue = JSON.stringify({
+    bookingId: booking._id,
+    username: booking.username,
+    plateNumber: booking.plateNumber,
+    bookingDuration: booking.bookingDuration,
+    paymentStatus: booking.PaymentStatus,
+    bookingDate: booking.bookingDate,
+  });
 
   return (
     <div className="confirmation-container">
       <div className="booking-details">
         <h2>Booking Confirmed! 🎉</h2>
-        <p><strong>Parking Name:</strong> {booking.parkingName}</p>
-        <p><strong>Location:</strong> {booking.location}</p>
-        <p><strong>Spot:</strong> {booking.parkingSpotId}</p>
-        <p><strong>Booking Date:</strong> {booking.bookingDate}</p>
-        <p><strong>Duration:</strong> {booking.bookingDuration} hours</p>
+        <p><strong>Username:</strong> {booking.username}</p>
+        <p><strong>Plate Number:</strong> {booking.plateNumber}</p>
+        <p><strong>Booking Duration:</strong> {booking.bookingDuration} hours</p>
         <p><strong>Total Price:</strong> {booking.totalPrice} RWF</p>
+        <p><strong>Payment Status:</strong> {booking.PaymentStatus}</p>
+        <p><strong>Booking Date:</strong> {new Date(booking.bookingDate).toLocaleString()}</p>
       </div>
 
       <div className="qr-code">
-        <h3>Scan to Check-in 🚗</h3>
+        <h3>Scan to Verify 🚗</h3>
         <QRCodeCanvas value={qrValue} size={180} />
       </div>
     </div>
