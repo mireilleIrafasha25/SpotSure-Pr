@@ -2,19 +2,19 @@ import SideBar from "./sidebar";
 import NavBarDashboard from "./navbar";
 import { Outlet } from "react-router-dom";
 import "./dashboard-styles/dashboard-layout.css"
-import { useDarkMode } from "./context/DarkModeContext";
-const DashboardLayout = () => {
-const {darkMode}=useDarkMode();
+import { useDarkMode } from "../dashboard/context/DarkModeContext"
+const AdminLayout = () => {
+const {theme}=useDarkMode();
     return (
-        <div className={`Main-outlet ${darkMode ? "dark":"light"}`}>
-             <div className={`SideBar-Element ${darkMode?"dark":"light"}`}>
+        <div className={`Main-outlet ${theme}`}>
+             <div className={`SideBar-Element ${theme}`}>
             <SideBar />
             </div>
             <div className="NavandDashboard">
             <div className="NavBarDashboard"><NavBarDashboard />  </div>
-            <div className={`outset  ${darkMode?'dark':'light'}`}><Outlet /></div>
+            <div className={`outset  ${theme}`}><Outlet /></div>
             </div> 
         </div>
     );
 }
-export default DashboardLayout;
+export default AdminLayout;

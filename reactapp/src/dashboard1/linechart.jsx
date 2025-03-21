@@ -24,7 +24,7 @@ export default function LineChart1() {
     <div>
 op
       <LineChart
-        width={500}
+        width={400}
         height={200}
         data={data}
         margin={{

@@ -6,7 +6,7 @@ import BookingConfirmation from "./confirmatioPage"; // Ensure this is correctly
 import axios from "axios"; // Ensure axios is imported
 
 
-const AdminDashboardPro = () => {
+const DashboardHome = () => {
   const [userName, setUserName] = useState("");
   const [userEmail, setUserEmail] = useState("");
   const { theme } = useDarkMode();
@@ -72,4 +72,4 @@ const AdminDashboardPro = () => {
   );
 };
 
-export default AdminDashboardPro;
+export default DashboardHome;

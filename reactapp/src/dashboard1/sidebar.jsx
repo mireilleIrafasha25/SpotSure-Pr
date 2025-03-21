@@ -5,7 +5,7 @@ import { FiUser } from "react-icons/fi";
 import { MdOutlineSettingsSuggest } from "react-icons/md";
 import { LiaSignOutAltSolid } from "react-icons/lia";
 import "./dashboard-styles/sidebar.css"
-import { useDarkMode } from "./context/DarkModeContext";
+import { useDarkMode } from "../dashboard/context/DarkModeContext";
 import{Link,useNavigate} from "react-router-dom"
 import { useAuth } from "../component/AuthProvider";
 const SideBar=()=>

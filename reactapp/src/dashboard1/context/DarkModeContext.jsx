@@ -1,19 +1,26 @@
-// src/contexts/DarkModeContext.js
-import React, { createContext, useState, useContext } from "react";
+import React, { createContext, useState, useContext, useEffect } from "react";
 
 const DarkModeContext = createContext();
 
 export const DarkModeProvider = ({ children }) => {
-  const [darkMode, setDarkMode] = useState(false);
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "default");
+
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+    document.body.className = theme;
+  }, [theme]);
+
+  const toggleTheme = (selectedTheme) => {
+    setTheme(selectedTheme);
   };
 
   return (
-    <DarkModeContext.Provider value={{ darkMode, toggleDarkMode }}>
+    <DarkModeContext.Provider value={{ theme, toggleTheme }}>
       {children}
     </DarkModeContext.Provider>
   );
 };
 
-export const useDarkMode = () => useContext(DarkModeContext);
+export function useDarkMode() {
+    return useContext(DarkModeContext);
+  }

@@ -1,66 +1,114 @@
-.Main-NavBar{
+.Main-Navbar2{
+    display: flex;
+    flex-direction: column;
+    position: fixed;   
+    z-index: 1000;
+    left: 13.7rem;
+    background-color:white;
+    top:0;
+}
+
+.NavBarDown2{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-     width: 56rem;
-    padding-top: 20px;
-    align-items: center;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-bottom: 20px;
-
-   
+    gap:10px;
+    width: 1000px;      
 }
-.Main-NavBar.dark{
-    background-color: #070707;
+.Menu-Icon{
+    margin-top: 10px;
+    margin-left: 20px;
+}
+.NavBarDown2.dark{
+    background-color: black;
     color: white;
 }
-.subdark
-{
+
+.step1{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.IconDiv2{
+    margin-top: 10px;
     display: flex;
     flex-direction: row;
-    gap: 0.5rem;
-    align-items: center;
+    gap: 20px;
+    margin-left: 730px;
 }
-.NumberCode{
-    background-color: white;
-    text-align:"center";
+.profileImage{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
 }
-.NumberCode span{
-    color: #333;
-    font-size: 15px;
-    padding: 10px;
-}
-.calendar-icon{
-    color: #333;
+.Sun-Icon{
+    color: gray;
     font-size: 14px;
     cursor: pointer;
 }
 
-.profile{
-    margin-left: 40px;
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    align-items: center;
-}
-.profile img{
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-}
-.profile span{
-    cursor: pointer;
-    color: #333;
-
-}
-.profile.dark span{
+.Sun-Icon.dark{
     color: white;
 }
-.DarkMode{
-    margin-left: 80px;
+
+.Notification-Icon{
+    color: gray;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.Notification-Icon.dark{
+    color: white;
+}
+.Language-Icon{
+    color: gray;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.Language-Icon.dark{
+    color: white;
+}
+.theme-dropdown-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .theme-dropdown {
+   display: inline-block;
+    top: 30px;
+    right: 200px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 120px;
+    padding: 8px 0;
+    z-index: 10;
+  }
+  .theme-dropdown.dark{
+background-color: #333;
+top:60px
+  }
+  .theme-dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .theme-dropdown ul li {
+    padding: 8px 16px;
+    cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 5px;
-    color: #333;
-}
+    font-size: 14px;
+  }
+  
+  .theme-dropdown ul li:hover {
+    background: #f0f0f0;
+  }
+  .theme-dropdown.dark ul li:hover{
+    background: white;
+    color: black;
+  }
+  

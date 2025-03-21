@@ -7,8 +7,7 @@ import { FaArrowUp } from "react-icons/fa6";
 import "./dashboard-styles/analytics.css"
 import { LuNotebook } from "react-icons/lu";
 import { TfiBag } from "react-icons/tfi";
-import { TbCircleDashedPercentage } from "react-icons/tb";
-import { useDarkMode } from "./context/DarkModeContext";
+import { useDarkMode } from "../dashboard/context/DarkModeContext";
 import SimpleBarChart from "./BarChart";
 import { FaCaretDown } from "react-icons/fa6";
 import PieChart1 from "./PieChart1";
@@ -17,7 +16,7 @@ import LineChart1 from "./linechart";
 import CustomerOrderTable from "./customerTable";
 import { LuRefreshCw } from "react-icons/lu";
 const Analytics = () => {
-  const { darkMode } = useDarkMode();
+  const { theme } = useDarkMode();
   const cardData = [
     { title: "Orders", value: 201 ,icon:<MdContentCopy/>,perc:"20%"},
     { title: "Approved", value: 36 ,icon:<FaRegSquareCheck/>,perc:"8.5%"},
@@ -42,13 +41,13 @@ const Analytics = () => {
     <div>
       <div className="Column3">
       <div className="Order-Approval">
-    <div className={`dashboard-container ${darkMode?"dark":"light"}`}>
+    <div className={`dashboard-container ${theme}`}>
       {/* Cards section */}
       {cardData.map((card, index) => (
-        <div className={`stats-card ${darkMode?"dark":"light"}`} key={index}>
-          <div className={`card-title ${darkMode? 'dark':"light"}`}><span>{card.title}</span><span>{card.icon}</span></div>
+        <div className={`stats-card ${theme}`} key={index}>
+          <div className={`card-title ${theme}`}><span>{card.title}</span><span>{card.icon}</span></div>
           <p>{card.value}</p>
-          <div className={`Arrow-Number ${darkMode? 'dark':'light'}`}><span><FaArrowUp className="Up-icon" />{card.perc}</span> <div>since last month</div></div>
+          <div className={`Arrow-Number ${theme}`}><span><FaArrowUp className="Up-icon" />{card.perc}</span> <div>since last month</div></div>
          
         </div>
       ))}
@@ -56,74 +55,74 @@ const Analytics = () => {
       <div className="dashboard-container">
       {/* Cards section */}
       {cardData1.map((card, index) => (
-        <div className={`stats-card ${darkMode?'dark':'light'} card-${index + 1}`} key={index}>
-          <div className={`card-title ${darkMode?'dark':'light'}`}><span>{card.title}</span><span>{card.icon}</span></div>
+        <div className={`stats-card ${theme} card-${index + 1}`} key={index}>
+          <div className={`card-title ${theme}`}><span>{card.title}</span><span>{card.icon}</span></div>
           <p>{card.value}</p>
-          <div className={`Arrow-Number ${darkMode?'dark':'light'}`}><span className="Down-Perc"><FaArrowDown className="Down-icon" />{card.perc}</span> <div className="lastMonth">since last month</div></div>
+          <div className={`Arrow-Number ${theme}`}><span className="Down-Perc"><FaArrowDown className="Down-icon" />{card.perc}</span> <div className="lastMonth">since last month</div></div>
          
         </div>
       ))}
       </div>
       </div>
-      <div className={`othercolumn ${darkMode?'dark':'light'}`}>
-      <div className={`dashboard-container3 ${darkMode?'dark':'light'}`}>
+      <div className={`othercolumn ${theme}`}>
+      <div className={`dashboard-container3 ${theme}`}>
       {/* Cards section */}
       {cardData3.map((card, index) => (
-        <div className={`stats-card3 ${darkMode?'dark':'light'} card-${index + 1}`} key={index}>
-          <div className={`card-title3 ${darkMode?'dark':'light'}` }>{card.title}</div>
-          <div className={`card-number3 ${darkMode?'dark':'light'}`}>{card.value}</div>
-          <div className={`Arrow-Number3 ${darkMode?'dark':'light'}`}>since last month</div>
+        <div className={`stats-card3 ${theme} card-${index + 1}`} key={index}>
+          <div className={`card-title3 ${theme}` }>{card.title}</div>
+          <div className={`card-number3 ${theme}`}>{card.value}</div>
+          <div className={`Arrow-Number3 ${theme}`}>since last month</div>
          <PieChart1/>
         </div>
       ))}
       </div>
       </div>
-      <div className={`othercolumn ${darkMode?'dark':'light'}`}>
-      <div className={`dashboard-container3 ${darkMode?'dark':'light'}`}>
+      <div className={`othercolumn ${theme}`}>
+      <div className={`dashboard-container3 ${theme}`}>
       {/* Cards section */}
       {cardData4.map((card, index) => (
-        <div className={`stats-card3 ${darkMode?'dark':'light'} card-${index + 1}`} key={index}>
-          <div className={`card-title3 ${darkMode?'dark':'light'}` }>{card.title}</div>
-          <div className={`card-number3 ${darkMode?'dark':'light'}`}>{card.value}</div>
-          <div className={`Arrow-Number3 ${darkMode?'dark':'light'}`}>since last month</div>
+        <div className={`stats-card3 ${theme} card-${index + 1}`} key={index}>
+          <div className={`card-title3 ${theme}` }>{card.title}</div>
+          <div className={`card-number3 ${theme}`}>{card.value}</div>
+          <div className={`Arrow-Number3 ${theme}`}>since last month</div>
          <PieChart1/>
         </div>
       ))}
       </div>
       </div>
       </div>
-      <div className={`column2  ${darkMode?'dark':'light'}`}>
-        <div className={`BarChartcolumn  ${darkMode?'dark':'light'}`}>
-          <div className={`Bar-top  ${darkMode?'dark':'light'}`}>
-            <div className={`sale  ${darkMode?'dark':'light'}`}>Sale Dynamics</div>
-            <div className={`Year-Bar  ${darkMode?'dark':'light'}`}><span>2021 <FaCaretDown/> </span></div>
+      <div className={`column2  ${theme}`}>
+        <div className={`BarChartcolumn  ${theme}`}>
+          <div className={`Bar-top  ${theme}`}>
+            <div className={`sale  ${theme}`}>Sale Dynamics</div>
+            <div className={`Year-Bar  ${theme}`}><span>2021 <FaCaretDown/> </span></div>
           </div>
-        <SimpleBarChart className={`simple-chartD  ${darkMode?'dark':'light'}`}/>
+        <SimpleBarChart className={`simple-chartD  ${theme}`}/>
         </div>
-        <div className={`dashboard-container  ${darkMode?'dark':'light'}`}>
+        <div className={`dashboard-container  ${theme}`}>
       {/* Cards section */}
       {cardData2.map((card, index) => (
-        <div className={`stats-card  ${darkMode?'dark':'light'} card-${index + 1}`} key={index}>
-          <div className={`card-title2  ${darkMode?'dark':'light'}`}><span>{card.icon}</span><span className="circle-chart"><SmallRadialChart/></span></div>
-          <div className={`title1  ${darkMode?'dark':'light'}`}>{card.title}</div>
-          <div className={`value  ${darkMode?'dark':'light'}`}>{card.value}</div>
-          <div className={`current-financial  ${darkMode?'dark':'light'}`}> Current Financial Year</div>
+        <div className={`stats-card  ${theme} card-${index + 1}`} key={index}>
+          <div className={`card-title2  ${theme}`}><span>{card.icon}</span><span className="circle-chart"><SmallRadialChart/></span></div>
+          <div className={`title1  ${theme}`}>{card.title}</div>
+          <div className={`value  ${theme}`}>{card.value}</div>
+          <div className={`current-financial  ${theme}`}> Current Financial Year</div>
     
          
         </div>
       ))}
       </div>
       </div>
-      <div className={`column22 ${darkMode?'dark':'light'}`}>
-        <div className={`LineChartcolumn ${darkMode?'dark':'light'}`}>
-          <div className={`user-activity ${darkMode?'dark':'light'}`}>
+      <div className={`column22 ${theme}`}>
+        <div className={`LineChartcolumn ${theme}`}>
+          <div className={`user-activity ${theme}`}>
             <span>Overall User Activity</span>
-          <div className={`Year-Bar ${darkMode?'dark':'light'}`}><span>2021 <FaCaretDown/> </span></div>
+          <div className={`Year-Bar ${theme}`}><span>2021 <FaCaretDown/> </span></div>
           </div>
           <LineChart1/>
         </div>
-        <div className={`User-table  ${darkMode?'dark':'light'}`}>
-        <div className={`Customer-Order  ${darkMode?'dark':'light'}`}><span>Customer Order</span> <LuRefreshCw/></div>
+        <div className={`User-table  ${theme}`}>
+        <div className={`Customer-Order  ${theme}`}><span>Customer Order</span> <LuRefreshCw/></div>
           <CustomerOrderTable/>
         </div>
       </div>
