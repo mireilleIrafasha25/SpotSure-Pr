@@ -74,6 +74,5 @@ export default function SimpleBarChart() {
       {/* <Legend /> */}
       <Bar dataKey="pv" fill="#FF4500" background={{ fill: "#eee" }} />
     </BarChart>
-    
   );
 }
