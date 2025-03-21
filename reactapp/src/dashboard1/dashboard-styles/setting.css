@@ -1,0 +1,47 @@
+.settings-container {
+    padding: 20px;
+    background-color: #f4f8fb;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    color: #1e3a8a;
+    margin-bottom: 20px;
+  }
+  
+  .tabs {
+    display: flex;
+    border-bottom: 2px solid #e0e0e0;
+    margin-bottom: 20px;
+  }
+  
+  .tab-button {
+    flex: 1;
+    padding: 10px;
+    background-color: #ffffff;
+    border: none;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    color: #1e3a8a;
+    font-weight: bold;
+    transition: background-color 0.3s, border-bottom 0.3s;
+  }
+  
+  .tab-button:hover {
+    background-color: #e0f7fa;
+  }
+  
+  .tab-button.active {
+    border-bottom: 2px solid #1e3a8a;
+    background-color: #e0f2ff;
+  }
+  
+  .tab-content {
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    color: #333;
+  }
+  

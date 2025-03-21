@@ -1,0 +1,29 @@
+.tab-panel.privacy {
+    padding: 20px;
+    background-color: #e0f7fa;
+    border: 1px solid #b2ebf2;
+    border-radius: 8px;
+  }
+  
+  .tab-panel.privacy h2 {
+    color: #00796b;
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .privacy-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .privacy-option label {
+    font-size: 16px;
+  }
+  
+  .privacy-option input[type="checkbox"] {
+    transform: scale(1.2);
+  }
+  

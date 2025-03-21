@@ -1,0 +1,66 @@
+.Main-NavBar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+     width: 56rem;
+    padding-top: 20px;
+    align-items: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 20px;
+
+   
+}
+.Main-NavBar.dark{
+    background-color: #070707;
+    color: white;
+}
+.subdark
+{
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    align-items: center;
+}
+.NumberCode{
+    background-color: white;
+    text-align:"center";
+}
+.NumberCode span{
+    color: #333;
+    font-size: 15px;
+    padding: 10px;
+}
+.calendar-icon{
+    color: #333;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.profile{
+    margin-left: 40px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+.profile img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+.profile span{
+    cursor: pointer;
+    color: #333;
+
+}
+.profile.dark span{
+    color: white;
+}
+.DarkMode{
+    margin-left: 80px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #333;
+}

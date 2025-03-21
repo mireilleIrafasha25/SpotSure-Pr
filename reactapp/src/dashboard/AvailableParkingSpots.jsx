@@ -32,7 +32,7 @@ const ParkingSpots = () => {
 
         } catch (err) {
           console.error("Error fetching parking spots:", err);
-          setError("Failed to load parking spots.");
+          Notify.failure("Failed to load parking spots.");
         } finally {
           setLoading(false);
         }
