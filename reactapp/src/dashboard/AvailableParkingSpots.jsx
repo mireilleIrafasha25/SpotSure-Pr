@@ -3,7 +3,7 @@ import axios from "axios";
 import "./dashboard-styles/availableParking.css"; 
 import { useDarkMode } from "./context/DarkModeContext"; // Assuming this is the hook for dark mode
 import { Link, useNavigate } from "react-router-dom";
-
+import { Notify } from "notiflix";
 const ParkingSpots = () => {
   const { theme } = useDarkMode(); // Get current theme (true/false)
   const [parkingSpots, setParkingSpots] = useState([]);
