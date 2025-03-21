@@ -7,13 +7,10 @@ const AdminLayout = () => {
 const {theme}=useDarkMode();
     return (
         <div className={`Main-outlet ${theme}`}>
-             <div className={`SideBar-Element ${theme}`}>
             <SideBar />
-            </div>
-            <div className="NavandDashboard">
-            <div className="NavBarDashboard"><NavBarDashboard />  </div>
+            <NavBarDashboard /> 
             <div className={`outset  ${theme}`}><Outlet /></div>
-            </div> 
+            
         </div>
     );
 }

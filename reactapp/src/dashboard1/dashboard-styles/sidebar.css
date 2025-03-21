@@ -1,15 +1,19 @@
 .container{
     display: flex;
     flex-direction: column;
+    position: fixed;
     background-color: white;
+    width:200px;
+    padding: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
 }
 .Business{
     display: flex;
     gap: 10px;
     flex-direction: row;
     margin-bottom: 25px;
-    padding: 10px;
-    
+    padding: 10px; 
 }
 .Business span{
     color:#333;

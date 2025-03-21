@@ -22,7 +22,6 @@ const NavBarDashBoard=()=>
 
 
 return(
-    <div>
         <div className="Main-Navbar2">
             <div className={`NavBarDown2 ${theme}`}>
             <IoMenu size={24} className={`Menu-Icon ${theme}`}/>
@@ -43,7 +42,6 @@ return(
              </div>
             </div>
         </div>
-    </div>
 )
 }
 export default NavBarDashBoard;

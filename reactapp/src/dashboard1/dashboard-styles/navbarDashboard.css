@@ -14,12 +14,13 @@
     gap:10px;
     width: 1000px;      
 }
+
 .Menu-Icon{
     margin-top: 10px;
     margin-left: 20px;
 }
 .NavBarDown2.dark{
-    background-color: black;
+    background-color: #333333;
     color: white;
 }
 

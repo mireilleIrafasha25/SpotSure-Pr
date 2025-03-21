@@ -72,7 +72,7 @@ export default function SimpleBarChart() {
       <YAxis />
       <Tooltip />
       {/* <Legend /> */}
-      <Bar dataKey="pv" fill="#1E90FF" background={{ fill: "#eee" }} />
+      <Bar dataKey="pv" fill="#FF4500" background={{ fill: "#eee" }} />
     </BarChart>
     
   );

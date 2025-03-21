@@ -38,7 +38,7 @@ const Analytics = () => {
   ]
 
   return (
-    <div>
+    <div className="Main-Analytic">
       <div className="Column3">
       <div className="Order-Approval">
     <div className={`dashboard-container ${theme}`}>

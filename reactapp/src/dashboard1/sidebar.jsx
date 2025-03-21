@@ -11,7 +11,7 @@ import { useAuth } from "../component/AuthProvider";
 const SideBar=()=>
 {
   const {logout}=useAuth();
-    const {darkMode}=useDarkMode();
+    const {theme}=useDarkMode();
 const navigate=useNavigate();
   const handleLogout = () => {
     console.log("Logout called"); 
@@ -19,26 +19,24 @@ const navigate=useNavigate();
     navigate("/");  // Redirect to the home page after logging out
   };
     return(
-       
-        <div className={`container ${darkMode?"dark":'light'}`}>
-          <div className={`Business ${darkMode?"dark":"light"}`}>
-            <img src="/dashpicx1.jpg" alt="Business" />
-            <span>Business</span>
+        <div className={`container ${theme}`}>
+          <div className={`Business ${theme}`}>
+            <img src="/dashpicx1.jpg" alt="SpotSure" />
+            <span>SpotSure</span>
             </div>  
             <div className="Main-Icon">
-            <Link to="/dashboard123" style={{textDecoration:"none"}}><div className={`icon ${darkMode?'dark':'light'}`}><MdOutlineAnalytics/><span >Dashboard</span></div></Link>
-           <Link to="/add-product" style={{textDecoration:"none"}}><div className={`icon ${darkMode?'dark':'light'}`}><MdOutlineProductionQuantityLimits/><span >Product</span></div></Link> 
-           <Link to="/report" style={{textDecoration:"none"}}><div className={`icon ${darkMode?'dark':'light'}`}><CgMail/><span>Reports</span></div> </Link>
-           <Link to="/UserDash" style={{textDecoration:"none"}}>  <div className={`icon ${darkMode?'dark':'light'}`}><FiUser/><span>Customers</span></div> </Link>
-            
+            <Link to="/dashboard123" style={{textDecoration:"none"}}><div className={`icon ${theme}`}><MdOutlineAnalytics/><span >Dashboard</span></div></Link>
+           <Link to="/add-product" style={{textDecoration:"none"}}><div className={`icon ${theme}`}><MdOutlineProductionQuantityLimits/><span >Product</span></div></Link> 
+           <Link to="/report" style={{textDecoration:"none"}}><div className={`icon ${theme}`}><CgMail/><span>Reports</span></div> </Link>
+           <Link to="/UserDash" style={{textDecoration:"none"}}>  <div className={`icon ${theme}`}><FiUser/><span>Customers</span></div> </Link>
             </div>
             <div className="Main-Icon2">
             <Link to="/setting" style={{textDecoration:"none"}}>
-             <div className={`icon2 ${darkMode?'dark':'light'}`}><MdOutlineSettingsSuggest/><span>Settings</span></div></Link>
-            <div onClick={handleLogout} className={`icon2 ${darkMode?'dark':'light'}`}><LiaSignOutAltSolid/><span>Sign Out</span></div>
+             <div className={`icon2 ${theme}`}><MdOutlineSettingsSuggest/><span>Settings</span></div></Link>
+            <div onClick={handleLogout} className={`icon2 ${theme}`}><LiaSignOutAltSolid/><span>Sign Out</span></div>
             </div>
             <div className="Main-DivandCarton">
-                <div className={`DivandCarton ${darkMode?'dark':'light'}`}>
+                <div className={`DivandCarton ${theme}`}>
                     <img src="/CatoonMan.jpg" alt="User" />
                     <div className="ContactHelp">
                     Need Help feel Free to contact
