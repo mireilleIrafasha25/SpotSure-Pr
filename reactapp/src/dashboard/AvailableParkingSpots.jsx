@@ -25,7 +25,7 @@ const ParkingSpots = () => {
               setUserName(storedName);
             }
           const response = await axios.post(
-            "http://localhost:4000/SpotSure/parking/findNearBy", 
+            "https://spotsure-backend.onrender.com/SpotSure/parking/findNearBy", 
             { destinationName }
           );
           setParkingSpots(response.data.data); // Assuming data is an array of parking spots

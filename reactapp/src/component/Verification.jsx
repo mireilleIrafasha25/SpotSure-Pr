@@ -29,7 +29,7 @@ const Verification = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const response = await axios.post("http://localhost:4000/SpotSure/user/verify", { otp});
+      const response = await axios.post("https://spotsure-backend.onrender.com/SpotSure/user/verify", { otp});
       const { message, newToken } = response.data;
       
       setMessage(response.data.message || "Verification done Successfully");
@@ -43,11 +43,9 @@ const Verification = () => {
         // Navigate based on the user role
         if (userRole === "admin") {
           navigate('/dashboard123');
-        } else if (userRole === "user") {
-          navigate('/booking');
         } else {
-          navigate('/none');
-        }
+          navigate('/client-dashboard');
+        } 
       }
     } catch (error) {
       setMessage(error.response?.data?.message || "Verification Failed");

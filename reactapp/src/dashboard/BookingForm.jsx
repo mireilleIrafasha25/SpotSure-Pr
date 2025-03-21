@@ -24,7 +24,7 @@ const navigate=useNavigate();
 
     const bookingData = { bookingDuration, parkingid, plateNumber };
     try {
-      const response = await fetch("http://localhost:4000/SpotSure/booking/newBooking", {
+      const response = await fetch("https://spotsure-backend.onrender.com/SpotSure/booking/newBooking", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

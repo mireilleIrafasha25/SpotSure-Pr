@@ -12,7 +12,7 @@ const BookingConfirmation = () => {
     const fetchBooking = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:4000/SpotSure/booking/getBooking/${bookingId}`
+          `https://spotsure-backend.onrender.com/SpotSure/booking/getBooking/${bookingId}`
         );
         setBooking(response.data.data); // ✅ Use actual API response
         Notify.success("Booking details loaded!");

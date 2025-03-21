@@ -35,6 +35,9 @@
     cursor: pointer;
     transition: 0.3s;
 }
+.verify-card button:hover{
+    background: #022F4A;
+}
 .verify-content span{
     font-size: 18px;
     color: black;

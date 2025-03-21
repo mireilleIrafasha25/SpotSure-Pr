@@ -25,7 +25,7 @@ const AdminDashboardPro = () => {
       if(storedEmail) {
         setUserEmail(storedEmail);
       }
-        const response = await axios.get("http://localhost:4000/SpotSure/user/listAll", {
+        const response = await axios.get("https://spotsure-backend.onrender.com/user/listAll", {
           headers: { Authorization: `Bearer ${token}` },
         });
      
