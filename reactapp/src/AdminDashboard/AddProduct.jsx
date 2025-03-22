@@ -3,66 +3,64 @@ import './dashboard-styles/Addproduct.css';
 import ProductTable from './productTable';
 
 const AddParking = () => {
-  const [name, setName] = useState('');
-const [nameofBuilding, setNameofBuilding] = useState('');
-const [location, setLocation] = useState('');
-const [pricePerHour, setPricePerHour] = useState('');
-const [availableSpaces, setAvailableSpaces] = useState('');
-const [numberOfSpaces, setNumberOfSpaces] = useState('');
-const [parkingSizes, setParkingSizes] = useState([]);
-const [image, setImage] = useState(null);
 const [activeContent, setActiveContent] = useState("addParking");
+ // Initialize formData state
+ const [formData, setFormData] = useState({
+  name: "",
+  nameofBuilding: "",
+  location: "",
+  nearbyBuildings: [],
+  pricePerHour: "",
+  availableSpaces: "",
+  numberOfSpaces: "",
+  parkingSizes: "",
+  image: null, // Important: Default value for the file input should be `null`
+});
+
+// Handle input changes (for text fields)
+const handleInputChange = (e) => {
+  setFormData({ ...formData, [e.target.name]: e.target.value });
+};
+
+// Handle file upload
+const handleFileChange = (e) => {
+  setFormData({ ...formData, image: e.target.files[0] }); // Store the file object
+};
 const HandleActionClick=(activeContent)=>
 {
 setActiveContent(activeContent);
 }
 const handleSubmit = async (e) => {
   e.preventDefault();
-
-  // Image upload logic (if required)
-  const formData = new FormData();
-  formData.append("file", image);
+  
+  const formDataToSend = new FormData();
+  formDataToSend.append("name", formData.name);
+  formDataToSend.append("nameofBuilding", formData.nameofBuilding);
+  formDataToSend.append("location", formData.location);
+  formDataToSend.append("nearbyBuildings", JSON.stringify(formData.nearbyBuildings)); // Convert to JSON string
+  formDataToSend.append("pricePerHour", formData.pricePerHour);
+  formDataToSend.append("availableSpaces", formData.availableSpaces);
+  formDataToSend.append("numberOfSpaces", formData.numberOfSpaces);
+  formDataToSend.append("parkingSizes", formData.parkingSizes);
+  formDataToSend.append("image", formData.image); // Ensure this matches `req.file`
 
   try {
-    // Assuming you're uploading to an image hosting service
-    const uploadResponse = await fetch('/upload-image', {
-      method: 'POST',
-      body: formData,
-    });
-    const result = await uploadResponse.json();
-    const imageUrl = result.url; // Assume the response contains the image URL
-
-    // Now send the parking details to your backend
-    const parkingDetails = {
-      name,
-      nameofBuilding,
-      location,
-      pricePerHour,
-      availableSpaces,
-      numberOfSpaces,
-      parkingSizes,
-      image: { url: imageUrl }, // Pass the image URL
-    };
-
-    const response = await fetch('/add-parking', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(parkingDetails),
+    const response = await fetch("http://localhost:4000/SpotSure/parking/create", {
+      method: "POST",
+      body: formDataToSend,
     });
 
     if (response.ok) {
-      console.log("Parking added successfully");
+      alert("Parking lot added successfully!");
     } else {
-      console.log("Error adding parking");
+      const errorData = await response.json();
+      alert(`Failed to add parking: ${errorData.message}`);
     }
   } catch (error) {
-    console.log("Error:", error);
+    console.error("Error:", error);
+    alert("An error occurred while adding the parking lot.");
   }
 };
-
-
   return (
     <div >
       <div className='welcomeCard'>
@@ -75,20 +73,12 @@ const handleSubmit = async (e) => {
       <form onSubmit={handleSubmit}>
   <div className="form-group">
     <label>Enter Parking information  <span>*</span></label>
-    <input
-      type="text"
-      placeholder="Enter parking name"
-      value={name}
-      onChange={(e) => setName(e.target.value)}
-      maxLength="20"
-      style={{ width: '700px' }}
-    />
   </div>
   <input
   type="text"
   placeholder="Enter parking name"
-  value={name}
-  onChange={(e) => setName(e.target.value)}
+  value={formData.name}
+  onChange={handleInputChange}
   maxLength="20"
   style={{ width: '700px' }}
 />
@@ -96,8 +86,8 @@ const handleSubmit = async (e) => {
 <input
   type="text"
   placeholder="Enter name of building"
-  value={nameofBuilding}
-  onChange={(e) => setNameofBuilding(e.target.value)}
+  value={formData.nameofBuilding}
+  onChange={handleInputChange}
   maxLength="20"
   style={{ width: '700px' }}
 />
@@ -105,8 +95,8 @@ const handleSubmit = async (e) => {
 <input
   type="text"
   placeholder="Enter location"
-  value={location}
-  onChange={(e) => setLocation(e.target.value)}
+  value={formData.location}
+  onChange={handleInputChange}
   maxLength="20"
   style={{ width: '700px' }}
 />
@@ -114,8 +104,8 @@ const handleSubmit = async (e) => {
 <input
   type="number"
   placeholder="$ Price per hour"
-  value={pricePerHour}
-  onChange={(e) => setPricePerHour(e.target.value)}
+  value={formData.pricePerHour}
+  onChange={handleInputChange}
   maxLength={20}
   style={{ width: '700px' }}
 />
@@ -123,31 +113,32 @@ const handleSubmit = async (e) => {
 <input
   type="number"
   placeholder="Available spaces"
-  value={availableSpaces}
-  onChange={(e) => setAvailableSpaces(e.target.value)}
+  value={formData.availableSpaces}
+  onChange={handleInputChange}
   style={{ width: '700px' }}
 />
 
 <input
   type="number"
   placeholder="Total spaces"
-  value={numberOfSpaces}
-  onChange={(e) => setNumberOfSpaces(e.target.value)}
+  value={formData.numberOfSpaces}
+  onChange={handleInputChange}
   style={{ width: '700px' }}
 />
 
 {/* Handle Parking Sizes (You can modify this according to your requirement) */}
 <input
   type="text"
-  value={parkingSizes}
+  value={formData.parkingSizes}
   placeholder='Enter Parking size'
-  onChange={(e) => setParkingSizes(e.target.value.split(','))}
+  onChange={handleInputChange}
   style={{ width: '700px' }}
 />
 
 <input
   type="file"
-  onChange={(e) => setImage(e.target.files[0])}
+  value={formData.image}
+  onChange={handleFileChange}
   style={{ width: '700px' }}
 />
 
