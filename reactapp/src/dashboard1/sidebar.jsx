@@ -25,7 +25,7 @@ const navigate=useNavigate();
             <span>SpotSure</span>
             </div>  
             <div className="Main-Icon">
-            <Link to="/dashboard123" style={{textDecoration:"none"}}><div className={`icon ${theme}`}><MdOutlineAnalytics/><span >Dashboard</span></div></Link>
+            <Link to="/admin-dashboard" style={{textDecoration:"none"}}><div className={`icon ${theme}`}><MdOutlineAnalytics/><span >Dashboard</span></div></Link>
            <Link to="/add-product" style={{textDecoration:"none"}}><div className={`icon ${theme}`}><MdOutlineProductionQuantityLimits/><span >Product</span></div></Link> 
            <Link to="/report" style={{textDecoration:"none"}}><div className={`icon ${theme}`}><CgMail/><span>Reports</span></div> </Link>
            <Link to="/UserDash" style={{textDecoration:"none"}}>  <div className={`icon ${theme}`}><FiUser/><span>Customers</span></div> </Link>
