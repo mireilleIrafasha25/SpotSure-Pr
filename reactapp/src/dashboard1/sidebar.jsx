@@ -26,9 +26,9 @@ const navigate=useNavigate();
             </div>  
             <div className="Main-Icon">
             <Link to="/admin-dashboard" style={{textDecoration:"none"}}><div className={`icon ${theme}`}><MdOutlineAnalytics/><span >Dashboard</span></div></Link>
-           <Link to="/add-product" style={{textDecoration:"none"}}><div className={`icon ${theme}`}><MdOutlineProductionQuantityLimits/><span >Product</span></div></Link> 
+           <Link to="/add-product" style={{textDecoration:"none"}}><div className={`icon ${theme}`}><MdOutlineProductionQuantityLimits/><span >Parking</span></div></Link> 
            <Link to="/report" style={{textDecoration:"none"}}><div className={`icon ${theme}`}><CgMail/><span>Reports</span></div> </Link>
-           <Link to="/UserDash" style={{textDecoration:"none"}}>  <div className={`icon ${theme}`}><FiUser/><span>Customers</span></div> </Link>
+           <Link to="/UserDash" style={{textDecoration:"none"}}>  <div className={`icon ${theme}`}><FiUser/><span>Users</span></div> </Link>
             </div>
             <div className="Main-Icon2">
             <Link to="/setting" style={{textDecoration:"none"}}>
