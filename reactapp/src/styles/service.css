@@ -2,11 +2,27 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2 items per row */
     gap: 20px; /* Space between items */
-    margin-top: 80px;
+    margin-top: 20px;
     padding: 20px;
 
 }
-
+.Main-Services{
+    margin-top: 7rem;
+}
+.Main-Services h2{
+ text-align:left;
+ margin-left:5rem ;
+ color:#022F4A
+}
+.Main-Services h2::after{
+    content: "";
+    width: 2rem;
+    height: 4px;
+    background: #ff6600;
+    display: block;
+    margin-top: 0.2rem;
+    margin-left: 6rem ;
+}
 .service {
     display: flex;
     align-items: center;
@@ -25,6 +41,7 @@
 .service-text h3 {
     font-size: 1.5rem;
     font-weight: bold;
+    color:#022F4A
 }
 
 .service-text p {

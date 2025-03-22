@@ -46,19 +46,23 @@ const Contact = () => {
       </div>
       <div className="contact-form">
         <h2>Contact Us</h2>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="Form-Container">
+          <div>
           <label>Name</label>
           <input type="text" placeholder="Enter your name" value={name} onChange={(e)=>setName(e.target.value)}/>
-          
+          </div>
+          <div>
           <label>Email</label>
           <input type="email" placeholder="Enter your email" value={email} onChange={(e)=>setEmail(e.target.value)} />
-          
+          </div>
+          <div>
           <label>Phone Number</label>
           <input type="text" placeholder="Enter your phone number" value={phone} onChange={(e)=>setPhone(e.target.value)}/>
-          
+          </div>
+          <div>
           <label>Message</label>
           <textarea placeholder="Enter your message" value={message1} onChange={(e)=>setMessage1(e.target.value)}></textarea>
-          
+          </div>
           <button type="submit" disabled={loading}>{loading?"sending":"SEND"}</button>
         </form>
         {message && <p>{message}</p>}

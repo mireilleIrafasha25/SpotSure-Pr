@@ -97,7 +97,7 @@ const NavBar = () => {
         ) : (
           <>
             <button onClick={HandleLoginForm} className="LoginButton">LOGIN</button>
-            <button onClick={HandleSignUpForm} className="LoginButton">REGISTER</button>
+            <button onClick={HandleSignUpForm} className="RegisterButton">REGISTER</button>
           </>
         )}
              

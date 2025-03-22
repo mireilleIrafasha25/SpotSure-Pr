@@ -84,6 +84,20 @@
     border: none;
     margin-top: 7px;
   }
+  .RegisterButton{
+    background-color: orangered;
+    color: white;
+    width: 110px;
+    height: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    margin-top: 7px;
+    margin-left: 10px;
+  }
+  .RegisterButton:hover{
+    background-color: rgb(178, 51, 5);
+  }
   .LoginButton:hover{
     background-color: rgb(178, 51, 5);
   }

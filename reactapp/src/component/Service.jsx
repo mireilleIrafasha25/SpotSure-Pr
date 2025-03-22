@@ -30,6 +30,8 @@ const servicesData = [
 
 const Services = () => {
   return (
+    <div className="Main-Services">
+      <h2>Our Services</h2>
     <div className="services">
       {servicesData.map((service) => (
         <div className="service" key={service.id}>
@@ -40,6 +42,7 @@ const Services = () => {
           </div>
         </div>
       ))}
+    </div>
     </div>
   );
 };

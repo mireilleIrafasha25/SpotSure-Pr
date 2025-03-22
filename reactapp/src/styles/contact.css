@@ -31,12 +31,17 @@
   }
   
   .contact-form label {
-    display: block;
-    margin-top: 10px;
+    /* display: block; */
     color: black;
     font-weight: bold;
   }
-  
+  .Form-Container{
+    display: flex;
+    flex-direction: column;
+    gap:0px;
+    margin-bottom: 20px;
+    color: #333;
+  }
   .contact-form input,
   .contact-form textarea {
     width: 300px;
