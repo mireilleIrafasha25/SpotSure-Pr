@@ -18,12 +18,12 @@ import ParkingSpots from "./dashboard/AvailableParkingSpots"
 import DestinationForm from "./dashboard/DestinationForm"
 import Payment from "./dashboard/Payment"
 import BookingForm from "./dashboard/BookingForm"
-import AdminLayout from "./dashboard1/dashboardLayout"
-import AdminDashboardPro from "./dashboard1/DashboardView"
-import AddParking from "./dashboard1/AddProduct"
-import Report from "./dashboard1/Report"
-import ManageUserDash from "./dashboard1/UserTable"
-import Settings from "./dashboard1/settings"
+import AdminLayout from "./AdminDashboard/dashboardLayout"
+import AdminDashboardPro from "./AdminDashboard/DashboardView"
+import AddParking from "./AdminDashboard/AddProduct"
+import Report from "./AdminDashboard/Report"
+import ManageUserDash from "./AdminDashboard/UserTable"
+import Settings from "./AdminDashboard/settings"
 function App() {
   return (
     <DarkModeProvider>
