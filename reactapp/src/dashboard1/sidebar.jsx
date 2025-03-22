@@ -21,7 +21,7 @@ const navigate=useNavigate();
     return(
         <div className={`container ${theme}`}>
           <div className={`Business ${theme}`}>
-            <img src="/dashpicx1.jpg" alt="SpotSure" />
+            <img src="/parkingpic.jpg" alt="SpotSure" />
             <span>SpotSure</span>
             </div>  
             <div className="Main-Icon">

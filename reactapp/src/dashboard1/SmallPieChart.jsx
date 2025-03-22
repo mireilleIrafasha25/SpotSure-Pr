@@ -11,9 +11,9 @@ const SmallRadialChart = () => {
         text={`${percentage}%`}
         styles={buildStyles({
           textSize: '20px',
-          pathColor: '#D83CF6',  // Ibara rya stroke ryo hejuru (Purple)
-          trailColor: '#E8D9F1',  // Ibara ry’uruziga rw’inyuma
-          textColor: '#000',     // Ibara ry’inyuguti hagati
+          pathColor: '#022F4A',  // circle color(darkblue)
+          trailColor: '#E8D9F1',  // outside  color cirlce
+          textColor: '#000',     // between color
         })}
       />
     </div>

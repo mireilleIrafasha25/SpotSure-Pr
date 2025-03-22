@@ -42,8 +42,8 @@ op
           connectNulls
           type="monotone"
           dataKey="uv"
-          stroke="#8884d8"
-          fill="#8884d8"
+          stroke="#022F4A"
+          fill="#022F4A"
         />
       </LineChart>
     </div>
