@@ -20,7 +20,7 @@ import Payment from "./dashboard/Payment"
 import BookingForm from "./dashboard/BookingForm"
 import AdminLayout from "./dashboard1/dashboardLayout"
 import AdminDashboardPro from "./dashboard1/DashboardView"
-import AddProduct from "./dashboard1/AddProduct"
+import AddParking from "./dashboard1/AddProduct"
 import Report from "./dashboard1/Report"
 import ManageUserDash from "./dashboard1/UserTable"
 import Settings from "./dashboard1/settings"
@@ -51,7 +51,7 @@ function App() {
      </Route>
      <Route path="/" element={<AdminLayout/>}>
       <Route path="/admin-dashboard" index element={<AdminDashboardPro/>} />
-      <Route path="/add-product" element={<AddProduct/>}/>
+      <Route path="/add-parking" element={<AddParking/>}/>
           <Route path="/report" element={<Report/>} />
           <Route path="/UserDash" element={<ManageUserDash/>} />
           <Route path="/setting" element={<Settings/>} /> 

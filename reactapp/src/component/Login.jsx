@@ -87,9 +87,9 @@ const Login = ({ HandleLoginForm }) => {
           <h2 style={{ color: '#4a5568' }}>Login</h2>
           <IoClose onClick={HandleLoginForm} style={{ cursor: "pointer", fontSize: "1.5rem" }} />
         </div>
-        <form onSubmit={handleSubmit} style={{ marginTop: '1.5rem' }}>
-          <div style={{ marginBottom: '1rem' }}>
-            <label htmlFor="email" style={{ display: 'block', color: '#718096', marginBottom: '0.5rem' }}>Email</label>
+        <form onSubmit={handleSubmit} style={{ marginTop: '1.5rem',display:"flex",flexDirection:"column" ,gap:"0rem"}}>
+          <div style={{ marginBottom: '1rem', display:"flex",flexDirection:"column",gap:"0rem"}} >
+            <label htmlFor="email" style={{ color: '#718096', marginBottom: '0.5rem' }}>Email</label>
             <input
               type="email"
               value={email}
