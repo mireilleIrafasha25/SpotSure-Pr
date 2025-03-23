@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './dashboard-styles/Addproduct.css';
 import AllParking from './AllParking';
-
+import { Notify } from 'notiflix';
 const AddParking = () => {
   const [activeContent, setActiveContent] = useState("addParking");
   const [formData, setFormData] = useState({
@@ -15,7 +15,7 @@ const AddParking = () => {
     parkingSizes: "",
     image: null,
   });
-
+ const [loading,setLoading]=useState(false)
   // Handle input changes
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -53,14 +53,18 @@ const AddParking = () => {
       });
 
       if (response.ok) {
-        alert("Parking lot added successfully!");
+        Notify.success("Parking lot added successfully!");
       } else {
         const errorData = await response.json();
-        alert(`Failed to add parking: ${errorData.message}`);
+        Notify.failure(`${errorData.message}`);
       }
     } catch (error) {
-      console.error("Error:", error);
-      alert("An error occurred while adding the parking lot.");
+      // console.error("Error:", error);
+      Notify.failure(error);
+    }
+    finally
+    {
+      setLoading(false)
     }
   };
 
@@ -89,7 +93,9 @@ const AddParking = () => {
             <input type="file" onChange={handleFileChange} style={{ width: '700px' }} />
 
             <div style={{ display: 'flex', flexDirection: 'row', gap: '20px' }}>
-              <button type="submit" style={{ background: "orangered", border: "none", color: "white" }}>Add Parking</button>
+              <button type="submit" style={{ background: "orangered", border: "none", color: "white" }}  disabled={loading}>
+            {loading ? 'Loading...' : 'Add Parking'}
+            </button>
               <button type="reset" style={{ background: 'orangered', color: 'white', border: "none", width: "8rem" }}>Cancel</button>
             </div>
           </form>
