@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './dashboard-styles/Addproduct.css';
-import ProductTable from './productTable';
+import AllParking from './AllParking';
 
 const AddParking = () => {
   const [activeContent, setActiveContent] = useState("addParking");
@@ -47,7 +47,7 @@ const AddParking = () => {
     formDataToSend.append("image", formData.image);
 
     try {
-      const response = await fetch("http://localhost:4000/SpotSure/parking/create", {
+      const response = await fetch("https://spotsure-backend.onrender.com/SpotSure/parking/create", {
         method: "POST",
         body: formDataToSend,
       });
@@ -96,7 +96,7 @@ const AddParking = () => {
         </div>
       )}
 
-      {activeContent === 'AllProduct' && <ProductTable />}
+      {activeContent === 'AllProduct' && <AllParking/>}
     </div>
   );
 };
