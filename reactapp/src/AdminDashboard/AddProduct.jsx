@@ -1,110 +1,111 @@
-import React, { useState } from 'react';
-import './dashboard-styles/Addproduct.css';
-import AllParking from './AllParking';
-import { Notify } from 'notiflix';
-const AddParking = () => {
-  const [activeContent, setActiveContent] = useState("addParking");
+import React, { useState } from "react";
+import { Notify } from "notiflix";
+import AllParking from "./AllParking";
+const AddParkingLot = () => {
   const [formData, setFormData] = useState({
     name: "",
     nameofBuilding: "",
     location: "",
-    nearbyBuildings: "", // Store as a string for input
+    nearbyBuildings: "",
     pricePerHour: "",
     availableSpaces: "",
     numberOfSpaces: "",
     parkingSizes: "",
     image: null,
   });
- const [loading,setLoading]=useState(false)
-  // Handle input changes
-  const handleInputChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+
+  const [loading, setLoading] = useState(false);
+    const[activeContent, setActiveContent] = useState("add-parking")
+    const handleTabClick = (tab) => {
+        setActiveContent(tab);
+    }
+  const handleChange = (e) => {
+    if (e.target.name === "image") {
+      setFormData({ ...formData, image: e.target.files[0] });
+    } else {
+      setFormData({ ...formData, [e.target.name]: e.target.value });
+    }
   };
 
-  // Handle file upload
-  const handleFileChange = (e) => {
-    setFormData({ ...formData, image: e.target.files[0] });
-  };
-
-  // Handle tab switch
-  const handleActionClick = (activeContent) => {
-    setActiveContent(activeContent);
-  };
-
-  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // Ensure an image is selected
+    if (!formData.image) {
+      Notify.failure("Please select an image");
+      return;
+    }
+
+    setLoading(true);
     const formDataToSend = new FormData();
-    formDataToSend.append("name", formData.name);
-    formDataToSend.append("nameofBuilding", formData.nameofBuilding);
-    formDataToSend.append("location", formData.location);
-    formDataToSend.append("nearbyBuildings", JSON.stringify(formData.nearbyBuildings.split(","))); // Convert to array
-    formDataToSend.append("pricePerHour", formData.pricePerHour);
-    formDataToSend.append("availableSpaces", formData.availableSpaces);
-    formDataToSend.append("numberOfSpaces", formData.numberOfSpaces);
-    formDataToSend.append("parkingSizes", formData.parkingSizes);
-    formDataToSend.append("image", formData.image);
+
+    // Append all form fields
+    Object.keys(formData).forEach((key) => {
+      if (key === "nearbyBuildings") {
+        formDataToSend.append(key, JSON.stringify(formData.nearbyBuildings.split(",")));
+      } else {
+        formDataToSend.append(key, formData[key]);
+      }
+    });
 
     try {
-      const response = await fetch("https://spotsure-backend.onrender.com/SpotSure/parking/create", {
-        method: "POST",
-        body: formDataToSend,
-      });
+      const response = await fetch(
+        "https://spotsure-backend.onrender.com/SpotSure/parking/create",
+        {
+          method: "POST",
+          body: formDataToSend,
+        }
+      );
 
       if (response.ok) {
         Notify.success("Parking lot added successfully!");
+        setFormData({
+          name: "",
+          nameofBuilding: "",
+          location: "",
+          nearbyBuildings: "",
+          pricePerHour: "",
+          availableSpaces: "",
+          numberOfSpaces: "",
+          parkingSizes: "",
+          image: null,
+        });
       } else {
         const errorData = await response.json();
-        Notify.failure(`${errorData.message}`);
+        Notify.failure(errorData.message);
       }
     } catch (error) {
-      // console.error("Error:", error);
-      Notify.failure(error);
-    }
-    finally
-    {
-      setLoading(false)
+      Notify.failure("Failed to create parking lot");
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
     <div>
-      <div className="welcomeCard">
-        <button onClick={() => handleActionClick('addParking')}>NEW PARKING</button>
-        <button onClick={() => handleActionClick('AllProduct')}> VIEW ALL PARKING HERE</button>
+          <div className="welcomeCard">
+        <button onClick={() => handleTabClick('add-parking')}>NEW PARKING</button>
+        <button onClick={() => handleTabClick('AllProduct')}> VIEW ALL PARKING HERE</button>
       </div>
-
-      {activeContent === 'addParking' && (
-        <div className="form-column2">
-          <form onSubmit={handleSubmit}>
-            <div className="form-group">
-              <label>Enter Parking information <span>*</span></label>
-            </div>
-
-            <input type="text" name="name" placeholder="Enter parking name" value={formData.name} onChange={handleInputChange} maxLength="20" style={{ width: '700px' }} />
-            <input type="text" name="nameofBuilding" placeholder="Enter name of building" value={formData.nameofBuilding} onChange={handleInputChange} maxLength="20" style={{ width: '700px' }} />
-            <input type="text" name="location" placeholder="Enter location" value={formData.location} onChange={handleInputChange} maxLength="20" style={{ width: '700px' }} />
-            <input type="text" name="nearbyBuildings" placeholder="Nearby buildings (comma-separated)" value={formData.nearbyBuildings} onChange={handleInputChange} style={{ width: '700px' }} />
-            <input type="number" name="pricePerHour" placeholder="$ Price per hour" value={formData.pricePerHour} onChange={handleInputChange} maxLength={20} style={{ width: '700px' }} />
-            <input type="number" name="availableSpaces" placeholder="Available spaces" value={formData.availableSpaces} onChange={handleInputChange} style={{ width: '700px' }} />
-            <input type="number" name="numberOfSpaces" placeholder="Total spaces" value={formData.numberOfSpaces} onChange={handleInputChange} style={{ width: '700px' }} />
-            <input type="text" name="parkingSizes" placeholder="Enter Parking size" value={formData.parkingSizes} onChange={handleInputChange} style={{ width: '700px' }} />
-            <input type="file" onChange={handleFileChange} style={{ width: '700px' }} />
-
-            <div style={{ display: 'flex', flexDirection: 'row', gap: '20px' }}>
-              <button type="submit" style={{ background: "orangered", border: "none", color: "white" }}  disabled={loading}>
-            {loading ? 'Loading...' : 'Add Parking'}
-            </button>
-              <button type="reset" style={{ background: 'orangered', color: 'white', border: "none", width: "8rem" }}>Cancel</button>
-            </div>
-          </form>
-        </div>
-      )}
-
-      {activeContent === 'AllProduct' && <AllParking/>}
+      {activeContent==='add-parking'&&(
+    <form onSubmit={handleSubmit} encType="multipart/form-data" style={{backgroundColor:"none",marginLeft:"14rem"}}>
+      <input type="text" name="name" placeholder="Parking Name" value={formData.name} onChange={handleChange} required />
+      <input type="text" name="nameofBuilding" placeholder="Building Name" value={formData.nameofBuilding} onChange={handleChange} required />
+      <input type="text" name="location" placeholder="Location" value={formData.location} onChange={handleChange} required />
+      <input type="text" name="nearbyBuildings" placeholder="Nearby Buildings (comma-separated)" value={formData.nearbyBuildings} onChange={handleChange} required />
+      <input type="number" name="pricePerHour" placeholder="Price per Hour" value={formData.pricePerHour} onChange={handleChange} required />
+      <input type="number" name="availableSpaces" placeholder="Available Spaces" value={formData.availableSpaces} onChange={handleChange} required />
+      <input type="number" name="numberOfSpaces" placeholder="Total Spaces" value={formData.numberOfSpaces} onChange={handleChange} required />
+      <input type="text" name="parkingSizes" placeholder="Parking Sizes" value={formData.parkingSizes} onChange={handleChange} required />
+      <input type="file" name="image" accept="image/*" onChange={handleChange} required />
+      <button type="submit" disabled={loading}>
+        {loading ? "Submitting..." : "Add Parking Lot"}
+      </button>
+    </form>
+    )}
+    {activeContent==='AllProduct'&&(<AllParking/>)}
     </div>
   );
 };
 
-export default AddParking;
+export default AddParkingLot;
