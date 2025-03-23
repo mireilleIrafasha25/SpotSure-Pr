@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Notify } from "notiflix";
 import AllParking from "./AllParking";
+import "./dashboard-styles/Addparking.css"
 const AddParkingLot = () => {
   const [formData, setFormData] = useState({
     name: "",
