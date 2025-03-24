@@ -41,12 +41,12 @@ const Verification = () => {
 
         // Navigate based on the user role
         if (userRole === "admin") {
-          navigate('/dashboard123');
+          navigate('/admin-dashboard');
         } else if(userRole === "carOwner"){
           navigate('/client-dashboard');
         } 
         else {
-          navigate('/dashboard123'); // Redirect to the dashboard for non-admin users
+          navigate('/parkingOwner-dashboard'); // Redirect to the dashboard for non-admin users
         }
       }
     } catch (error) {
