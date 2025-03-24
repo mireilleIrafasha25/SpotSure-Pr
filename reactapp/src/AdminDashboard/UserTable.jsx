@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Notify } from "notiflix";
 
 const styles = {
-  container: { padding: "20px", fontFamily: "Arial, sans-serif",marginLeft:"12rem" },
+  container: { padding: "20px", fontFamily: "Arial, sans-serif",marginLeft:"6rem" },
   table: { width: "100%", borderCollapse: "collapse", marginBottom: "20px", boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)" },
   th: { backgroundColor: "#022F4A", color: "white", padding: "10px", border: "1px solid #ddd", textAlign: "left", fontSize: "14px" },
   td: { padding: "10px", border: "1px solid #ddd", textAlign: "left", fontSize: "12px" },
@@ -29,7 +29,6 @@ const ManageUserDash = () => {
     try {
       const response = await axios.get("https://spotsure-backend.onrender.com/SpotSure/user/listAll");
       setUsers(response.data.getUsers || []);
-      console.log("API Response:", response.data.getUsers); 
     } catch (err) {
       console.error("Error fetching users:", err);
       Notify.failure("Failed to fetch users. Please try again later.");
@@ -37,14 +36,13 @@ const ManageUserDash = () => {
       setLoading(false);
     }
   };
-
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this user?")) return;
 
     try {
       await axios.delete(`https://spotsure-backend.onrender.com/SpotSure/user/delete/${id}`);
       Notify.success("User deleted successfully!");
-      setUsers(users.filter(user => user.id !== id)); // Refresh list
+      setUsers(users.filter(user => user._id !== id)); // Instead of user.id, use user._id
     } catch (error) {
       console.error("Error deleting user:", error);
       Notify.failure("Failed to delete user.");
@@ -52,26 +50,39 @@ const ManageUserDash = () => {
   };
 
   const handleEdit = (user) => {
-    setEditUser(user);
-    setEditedName(user.Name);
+    setEditUser(user); // Store the full user object
+    setEditedName(user.Name); // Prefill input with current name
   };
+  
 
   const handleUpdate = async () => {
-    if (!editUser) return;
-
+    if (!editUser || !editUser._id) {
+      Notify.failure("Invalid user data. Please select a user before updating.");
+      return;
+    }
+  
     try {
-      const response = await axios.put(`https://spotsure-backend.onrender.com/SpotSure/user/update/${editUser.id}`, {
-        Name: editedName,
-      });
-
+      await axios.put(
+        `https://spotsure-backend.onrender.com/SpotSure/user/update/${editUser._id}`,
+        { Name: editedName }
+      );
+  
       Notify.success("User updated successfully!");
-      setUsers(users.map(user => (user.id === editUser.id ? { ...user, Name: editedName } : user)));
+  
+      // Update the users state with the new name
+      setUsers(users.map(user => 
+        user._id === editUser._id ? { ...user, Name: editedName } : user
+      ));
+  
+      // Reset edit form
       setEditUser(null);
+      setEditedName("");
     } catch (error) {
       console.error("Error updating user:", error);
       Notify.failure("Failed to update user.");
     }
   };
+  
 
   return (
     <div style={styles.container}>
@@ -92,7 +103,7 @@ const ManageUserDash = () => {
           </thead>
           <tbody>
             {users.map((user, index) => (
-              <tr key={user.id} style={index % 2 === 0 ? styles.stripedRow : styles.normalRow}>
+              <tr key={user._id} style={index % 2 === 0 ? styles.stripedRow : styles.normalRow}>
                 <td style={styles.td}>{user.Name}</td>
                 <td style={styles.td}>{user.email}</td>
                 <td style={styles.td}>{user.role}</td>
@@ -100,7 +111,7 @@ const ManageUserDash = () => {
                 <td style={styles.td}>
                   <div>
                     <button style={styles.editButton} onClick={() => handleEdit(user)}>Edit</button>
-                    <button style={styles.deleteButton} onClick={() => handleDelete(user.id)}>Delete</button>
+                    <button style={styles.deleteButton} onClick={() => handleDelete(user._id)}>Delete</button>
                   </div>
                 </td>
               </tr>
@@ -115,7 +126,7 @@ const ManageUserDash = () => {
       {editUser && (
         <div style={{ marginTop: "20px", padding: "10px", border: "1px solid #ddd", borderRadius: "5px" }}>
           <h3>Edit User</h3>
-          <input type="text" value={Name} onChange={(e) => setEditedName(e.target.value)} />
+          <input type="text" value={editedName} onChange={(e) => setEditedName(e.target.value)} />
           <button style={styles.editButton} onClick={handleUpdate}>Edit</button>
         </div>
       )}
