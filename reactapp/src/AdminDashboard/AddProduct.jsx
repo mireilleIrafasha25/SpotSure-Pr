@@ -99,7 +99,7 @@ const AddParkingLot = () => {
       <input type="number" name="numberOfSpaces" placeholder="Total Spaces" value={formData.numberOfSpaces} onChange={handleChange} required />
       <input type="text" name="parkingSizes" placeholder="Parking Sizes" value={formData.parkingSizes} onChange={handleChange} required />
       <input type="file" name="image" accept="image/*" onChange={handleChange} required />
-      <button type="submit" disabled={loading}>
+      <button type="submit" disabled={loading} style={{backgroundColor:"orangered"}}>
         {loading ? "Submitting..." : "Add Parking Lot"}
       </button>
     </form>
