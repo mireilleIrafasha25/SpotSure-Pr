@@ -24,6 +24,7 @@ import AddParkingLot from "./AdminDashboard/AddProduct"
 import Report from "./AdminDashboard/Report"
 import ManageUserDash from "./AdminDashboard/UserTable"
 import Settings from "./AdminDashboard/settings"
+import RegisterParkingOwner from "./AdminDashboard/AddParkingOwner"
 function App() {
   return (
     <DarkModeProvider>
@@ -54,7 +55,8 @@ function App() {
       <Route path="/add-parking" element={<AddParkingLot/>}/>
           <Route path="/report" element={<Report/>} />
           <Route path="/UserDash" element={<ManageUserDash/>} />
-          <Route path="/setting" element={<Settings/>} /> 
+          <Route path="/setting" element={<Settings/>} />
+          <Route path="/register-parking" element={<RegisterParkingOwner/>} />
      </Route>
     </Routes>
     </Router>

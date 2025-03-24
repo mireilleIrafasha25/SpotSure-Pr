@@ -14,9 +14,6 @@ const Register_own=({HandleSignUpForm})=>
      const [loading, setLoading] = useState(false);
      const [showPassword, setShowPassword] = useState(false); 
     const navigate = useNavigate();
-    const togglePasswordVisibility = () => {
-        setShowPassword(!showPassword); 
-      };
 const [modal,useModal]=useState(false);
 const HandleLoginForm=()=>
     {

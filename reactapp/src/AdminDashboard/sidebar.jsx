@@ -4,6 +4,7 @@ import { CgMail } from "react-icons/cg";
 import { FiUser } from "react-icons/fi";
 import { MdOutlineSettingsSuggest } from "react-icons/md";
 import { LiaSignOutAltSolid } from "react-icons/lia";
+import { FaUsersGear } from "react-icons/fa6";
 import "./dashboard-styles/sidebar.css"
 import { useDarkMode } from "../dashboard/context/DarkModeContext";
 import{Link,useNavigate} from "react-router-dom"
@@ -27,7 +28,7 @@ const navigate=useNavigate();
             <div className="Main-Icon">
             <Link to="/admin-dashboard" style={{textDecoration:"none"}}><div className={`icon ${theme}`}><MdOutlineAnalytics/><span >Dashboard</span></div></Link>
            <Link to="/add-parking" style={{textDecoration:"none"}}><div className={`icon ${theme}`}><MdOutlineProductionQuantityLimits/><span >Parking</span></div></Link> 
-           <Link to="/report" style={{textDecoration:"none"}}><div className={`icon ${theme}`}><CgMail/><span>Reports</span></div> </Link>
+           <Link to="/register-parking" style={{textDecoration:"none"}}><div className={`icon ${theme}`}><FaUsersGear/><span>Parking Owner</span></div> </Link>
            <Link to="/UserDash" style={{textDecoration:"none"}}>  <div className={`icon ${theme}`}><FiUser/><span>Users</span></div> </Link>
             </div>
             <div className="Main-Icon2">

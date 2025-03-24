@@ -3,7 +3,6 @@ import "../styles/verification.css";
 import jwt_decode from "jwt-decode";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
 const Verification = () => {
   const [otp, setOtp] = useState("");
   const [message, setMessage] = useState("");
@@ -43,9 +42,12 @@ const Verification = () => {
         // Navigate based on the user role
         if (userRole === "admin") {
           navigate('/dashboard123');
-        } else {
+        } else if(userRole === "carOwner"){
           navigate('/client-dashboard');
         } 
+        else {
+          navigate('/dashboard123'); // Redirect to the dashboard for non-admin users
+        }
       }
     } catch (error) {
       setMessage(error.response?.data?.message || "Verification Failed");
