@@ -18,7 +18,7 @@ const Profile = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.put("http://localhost:5000/Botiga/user/updateByEmail", formData);
+      const response = await axios.put("https://spotsure-backend-e4nq.onrender.com/SpotSure/user/updateByEmail", formData);
       setMessage("Profile updated successfully!");
     } catch (error) {
       console.error("Error updating profile:", error);

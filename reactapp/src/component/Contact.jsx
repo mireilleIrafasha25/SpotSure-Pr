@@ -15,7 +15,7 @@ const Contact = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const response=await axios.post("https://spotsure-backend.onrender.com/SpotSure/contact/add",
+      const response=await axios.post("https://spotsure-backend-e4nq.onrender.com/SpotSure/contact/add",
        { 
         email,
         name,

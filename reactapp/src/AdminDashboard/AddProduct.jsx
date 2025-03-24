@@ -51,7 +51,7 @@ const AddParkingLot = () => {
 
     try {
       const response = await fetch(
-        "https://spotsure-backend.onrender.com/SpotSure/parking/create",
+        "https://spotsure-backend-e4nq.onrender.com/SpotSure/parking/create",
         {
           method: "POST",
           body: formDataToSend,

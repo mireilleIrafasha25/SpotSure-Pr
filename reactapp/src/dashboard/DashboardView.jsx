@@ -25,7 +25,7 @@ const DashboardHome = () => {
       if(storedEmail) {
         setUserEmail(storedEmail);
       }
-        const response = await axios.get("https://spotsure-backend.onrender.com/user/listAll", {
+        const response = await axios.get("https://spotsure-backend-e4nq.onrender.com/SpotSure/user/listAll", {
           headers: { Authorization: `Bearer ${token}` },
         });
      

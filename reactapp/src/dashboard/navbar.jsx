@@ -1,10 +1,7 @@
 import "./dashboard-styles/dashboardnavbar.css"
 import { useDarkMode } from "./context/DarkModeContext";
-import { CiSearch } from "react-icons/ci";
 import { MdSunny } from "react-icons/md";
 import { MdSettingsApplications } from "react-icons/md";
-import { IoFlashSharp } from "react-icons/io5";
-import { IoMdNotifications } from "react-icons/io";
 import { MdLanguage } from "react-icons/md";
 import { useState } from "react";
 import { MdDarkMode } from "react-icons/md";

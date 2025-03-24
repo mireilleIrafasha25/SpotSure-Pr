@@ -27,7 +27,7 @@ const ManageUserDash = () => {
   const fetchUsers = async () => {
     setLoading(true);
     try {
-      const response = await axios.get("https://spotsure-backend.onrender.com/SpotSure/user/listAll");
+      const response = await axios.get("https://spotsure-backend-e4nq.onrender.com/SpotSure/user/listAll");
       setUsers(response.data.getUsers || []);
     } catch (err) {
       console.error("Error fetching users:", err);
@@ -40,7 +40,7 @@ const ManageUserDash = () => {
     if (!window.confirm("Are you sure you want to delete this user?")) return;
 
     try {
-      await axios.delete(`https://spotsure-backend.onrender.com/SpotSure/user/delete/${id}`);
+      await axios.delete(`https://spotsure-backend-e4nq.onrender.com/SpotSure/user/delete/${id}`);
       Notify.success("User deleted successfully!");
       setUsers(users.filter(user => user._id !== id)); // Instead of user.id, use user._id
     } catch (error) {
@@ -63,7 +63,7 @@ const ManageUserDash = () => {
   
     try {
       await axios.put(
-        `https://spotsure-backend.onrender.com/SpotSure/user/update/${editUser._id}`,
+        `https://spotsure-backend-e4nq.onrender.com/SpotSure/user/update/${editUser._id}`,
         { Name: editedName }
       );
   

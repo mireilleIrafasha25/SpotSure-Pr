@@ -39,7 +39,7 @@ const RegisterParkingOwner = () => {
     setLoading(true);
     try {
       const response = await axios.post(
-        "https://spotsure-backend.onrender.com/SpotSure/user/signup",
+        "https://spotsure-backend-e4nq.onrender.com/SpotSure/user/signup",
         {
           Name: name, // Fixed naming
           email,
