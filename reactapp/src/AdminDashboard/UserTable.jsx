@@ -3,12 +3,12 @@ import { useState, useEffect } from "react";
 import { Notify } from "notiflix";
 
 const styles = {
-  container: { padding: "20px", fontFamily: "Arial, sans-serif" },
+  container: { padding: "20px", fontFamily: "Arial, sans-serif",marginLeft:"12rem" },
   table: { width: "100%", borderCollapse: "collapse", marginBottom: "20px", boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)" },
   th: { backgroundColor: "#022F4A", color: "white", padding: "10px", border: "1px solid #ddd", textAlign: "left", fontSize: "14px" },
   td: { padding: "10px", border: "1px solid #ddd", textAlign: "left", fontSize: "12px" },
-  stripedRow: { backgroundColor: "#f0f8ff" },
-  normalRow: { backgroundColor: "#e6f7ff" },
+  stripedRow: { backgroundColor: "none" },
+  normalRow: { backgroundColor: "none" },
   deleteButton: { backgroundColor: "red", color: "white", padding: "5px 10px", border: "none", borderRadius: "5px", cursor: "pointer", marginLeft: "10px" },
   editButton: { backgroundColor: "#022F4A", color: "white", padding: "5px 10px", border: "none", borderRadius: "5px", cursor: "pointer" },
 };
@@ -29,6 +29,7 @@ const ManageUserDash = () => {
     try {
       const response = await axios.get("https://spotsure-backend.onrender.com/SpotSure/user/listAll");
       setUsers(response.data.getUsers || []);
+      console.log("API Response:", response.data.getUsers); 
     } catch (err) {
       console.error("Error fetching users:", err);
       Notify.failure("Failed to fetch users. Please try again later.");
@@ -84,7 +85,9 @@ const ManageUserDash = () => {
               <th style={styles.th}>Name</th>
               <th style={styles.th}>Email</th>
               <th style={styles.th}>Role</th>
+              <th style={styles.th}>Verified</th>
               <th style={styles.th}>Actions</th>
+  
             </tr>
           </thead>
           <tbody>
@@ -93,6 +96,7 @@ const ManageUserDash = () => {
                 <td style={styles.td}>{user.Name}</td>
                 <td style={styles.td}>{user.email}</td>
                 <td style={styles.td}>{user.role}</td>
+                <td style={styles.td}>{user.verified ? "Yes" : "No"}</td>
                 <td style={styles.td}>
                   <div>
                     <button style={styles.editButton} onClick={() => handleEdit(user)}>Edit</button>

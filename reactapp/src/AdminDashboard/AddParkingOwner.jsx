@@ -83,7 +83,7 @@ const RegisterParkingOwner = () => {
     },
     button: {
       width: "200px",
-      marginLeft: "12rem",
+      marginLeft: "8rem",
       backgroundColor: "#FE4801",
       border: "none",
       padding: "10px",

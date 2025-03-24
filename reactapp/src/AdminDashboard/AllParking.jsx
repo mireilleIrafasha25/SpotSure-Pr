@@ -30,7 +30,7 @@ const AllParking = () => {
           {parkingSpots.map((spot, index) => (
             <div key={index} className="parking-item">
               <div className="parking-image">
-                <img src={spot.image.url} alt="Parking Spot" />
+                <img src={spot.image.url} alt="Parking Spot" style={{height:"17rem"}} />
               </div>
               <div className="parking-description">
                 <h3>{spot.name}</h3>
@@ -41,7 +41,6 @@ const AllParking = () => {
                 <p><strong>Parking Size:</strong> {spot.parkingSizes}</p> 
                 <p><strong>Nearby Buildings:</strong> {spot.nearbyBuildings.join(", ")}</p>
                 <p><strong>Price per Hour:</strong> {spot.pricePerHour} RWF</p>
-    
               </div>
             </div>
           ))}
