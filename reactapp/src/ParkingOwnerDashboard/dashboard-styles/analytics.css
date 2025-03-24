@@ -1,0 +1,289 @@
+
+.dashboard-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 5px;
+    background-color: none;
+  }
+  .stats-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  .stats-card.dark {
+    background-color: #333;
+    color: white;
+  }
+  
+  .stats-card.dark p{
+    color:#e9ecef
+  }
+  .stats-card p {
+    font-size: 15px;
+    color: #495057;
+    font-weight: bold;
+  }
+  
+  .chart-placeholder {
+    background-color: #e9ecef;
+    height: 200px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #6c757d;
+  }
+  
+  .table-placeholder {
+    grid-column: span 3;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .Column3{
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 5px;;
+  }
+  .othercolumn{
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+  }
+  .othercolumn.dark{
+background-color: #333;
+  }
+  .column2{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .BarChartcolumn{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding-left:0 ;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+  }
+  .BarChartcolumn.dark{
+background-color: #333;
+  }
+  .Bar-top{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    gap:100px
+  }
+  .Year-Bar span
+  {
+    color: gray;
+  }
+  .Year-Bar.dark span{
+    color: white;
+  }
+  .sale.dark{
+    color: white;
+  }
+  .sale{
+    color:gray
+  }
+  .column22{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+  }
+  .LineChartcolumn{
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    color:#343a40
+  }
+  .LineChartcolumn.dark{
+    background-color: #333;
+    color: white;
+  }
+  .user-activity.dark span{
+    color: white;
+  }
+  .User-table{
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    color:#343a40
+  }
+  .User-table.dark{
+    background-color: #333;
+  }
+  .Customer-Order.dark span{
+    color: white;
+  }
+  .Customer-Order.dark{
+    color:white
+  }
+  .card-title{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+  .card-title.dark span{
+color:white;
+  }
+  .card-title span{
+    color: #343a40;
+  }
+  .Up-icon{
+    size:5px;
+    color:#FF4500
+  }
+.Arrow-Number{
+display: flex;
+flex-direction: row;
+gap:20px
+}
+.Arrow-Number span{
+  color:#FF4500;
+  font-size: 10px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 3px;
+}
+.Arrow-Number div{
+  font-size: 10px;
+  width:80px;
+  color:gray;
+  margin-top: 3px;
+}
+.Arrow-Number.dark div{
+  color:white;
+}
+.card-title2.dark span{
+color:white;
+}
+.Down-icon{
+color: red;
+}
+.Arrow-Number .Down-Perc{
+  color: red;
+}
+.card-title2{
+  display: flex;
+  flex-direction: row;
+  gap:80px;
+ 
+}
+.card-title2 span{
+  color:#343a40
+}
+.card-title2 .circle-chart{
+  color:rgb(222, 222, 43)
+}
+.stats-card .title1{
+  color: gray;
+  font-size:10px;
+  margin-top:10px;
+  margin-bottom:10px
+}
+.stats-card .value{
+  font-size: 15px;
+  color: #495057;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.current-financial{
+  font-size:10px;
+  color:gray
+}
+
+.dashboard-container3{
+background-color: white;
+}
+.dashboard-container3.dark{
+  background-color: #333;
+  color: white;
+}
+.stats-card3{
+  display: flex;
+  flex-direction: column;
+  gap:10px;
+}
+.card-title3{
+  font-size: 14px;
+  color: #333;
+}
+.card-title3.dark{
+  color:white
+}
+.card-number3{
+  font-size: 15px;
+  color: #495057;
+  font-weight: bold;
+}
+.card-number3.dark{
+  color: white;
+}
+.value{
+  font-size:15px
+}
+.Arrow-Number3{
+  font-size: 10px;
+  color: gray;
+  gap: 20px;
+}
+.Arrow-Number3.dark{
+  color: white;
+}
+.Customer-Order{
+  display: flex;
+  flex-direction: row;
+  gap:300px;
+  font-size: 12px;
+  color: gray;
+  margin-bottom: 10px;
+}
+.card-title2.dark{
+  color:white
+}
+.title1.dark{
+  color:white
+}
+.value.dark{
+  color: white;
+}
+.current-financial.dark{
+color: white;
+}
+.Customer-Order span{
+  color:gray
+}
+.user-activity{
+  display: flex;
+  flex-direction: row;
+  gap:150px;
+  font-size: 12px;
+  color: gray;
+  margin-bottom: 10px;
+}
+.user-activity span{
+  color:gray;
+}

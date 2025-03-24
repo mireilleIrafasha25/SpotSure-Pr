@@ -42,7 +42,7 @@ const Login = ({ HandleLoginForm }) => {
       } else if (userRole === "carOwner") {
         navigate('/client-dashboard');
       } else {
-        Notify.success("You are not allowed to explore this platform");
+          navigate('/parkingOwner-dashboard'); // Redirect to the dashboard for non-admin users
       }
 
     } catch (error) {

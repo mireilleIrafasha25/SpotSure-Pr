@@ -1,0 +1,48 @@
+.container {
+    padding: '20px';
+    max-width: '1200px';
+    margin: '0 auto';
+  };
+  .row{
+    display: 'flex';
+    justify-Content: 'space-between';
+    gap:'20px';
+  };
+  .profileCard{
+    flex: 1;
+    background-Color: '#f0f0f0';
+    padding: '20px';
+    border-radius: '8px';
+    box-shadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+  };
+  .welcomeCard{
+    flex: 2;
+    background-color: '#e6f7ff';
+    padding: '20px';
+    border-radius: '8px';
+    box-shadow: '0 2px 4px rgba(0, 0, 0, 0.1)';
+  };
+  /* actions{
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '10px',
+    marginTop: '20px',
+  },
+  actionButton: {
+    padding: '10px 20px',
+    backgroundColor: '#1890ff',
+    color: '#fff',
+    border: 'none',
+    borderRadius: '5px',
+    cursor: 'pointer',
+    transition: 'background-color 0.3s',
+  },
+  logoutButton: {
+    padding: '10px 20px',
+    backgroundColor: '#ff4d4f',
+    color: '#fff',
+    border: 'none',
+    borderRadius: '5px',
+    cursor: 'pointer',
+    transition: 'background-color 0.3s',
+  }, */

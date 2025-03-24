@@ -1,0 +1,121 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    background-color: white;
+    width:200px;
+    padding: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+.Business{
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    margin-bottom: 25px;
+    padding: 10px; 
+}
+.Business span{
+    color:#333;
+}
+.Business.dark span{
+    color: white;
+}
+.Business img{
+    width: 30px;
+    height: 20px;
+}
+.icon{
+display: flex;
+flex-direction: row;
+gap:20px;
+color: #333;
+cursor: pointer;
+}
+.icon.dark span{
+    color: white;
+}
+.icon.dark{
+    color:white
+}
+.Main-Icon{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+    cursor: pointer;
+    padding-bottom: 20px;
+    
+   
+}
+.icon span{
+    font-size: 12px;
+    color: #333;
+}
+.Main-Icon2{
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    padding-bottom: 20px;
+    border-top: 3px solid rgb(241, 239, 239);
+}
+.icon2{
+    display: flex;
+    flex-direction: row;
+    gap:20px;
+    color: #333;
+    padding: 10px;
+    }
+    .icon2 span{
+        font-size: 12px;
+        color: #333;
+    }
+    .icon2.dark{
+        color: white;
+    }
+    .icon2.dark span{
+        color: white;
+    }
+    .DivandCarton{
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        padding-left: 5px;
+        border-radius: 5px;
+        background-color:#022F4A;
+    }
+    .DivandCarton.dark{
+        background-color: white;
+        color: #333;
+    }
+    .DivandCarton img{
+        width: 50px;
+        height: 100px;
+    }
+    .ContactHelp{
+        display:inline-block;
+        cursor: pointer;
+       padding-top: 10px;
+       margin-right: 5px;
+    }
+    .ContactHelp button{
+     color: beige;
+     border-radius: 10px;
+     padding-left: 0;
+     padding-right: 0;
+     width:100px;
+     font-size:14px;    
+     background-color:orangered
+    }
+     .ContactHelp button:hover{
+        background-color: orange;
+    
+    }
+     .container {
+        transition: background-color 0.3s ease-in-out;
+      }
+      
+      .container.dark {
+        background-color: #262525;
+        color: white;
+      }

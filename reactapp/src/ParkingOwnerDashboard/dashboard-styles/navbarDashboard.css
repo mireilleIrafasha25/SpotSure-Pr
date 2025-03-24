@@ -1,0 +1,115 @@
+.Main-Navbar2{
+    display: flex;
+    flex-direction: column;
+    position: fixed;   
+    z-index: 1000;
+    left: 13.7rem;
+    background-color:white;
+    top:0;
+}
+
+.NavBarDown2{
+    display: flex;
+    flex-direction: row;
+    gap:10px;
+    width: 1000px;      
+}
+
+.Menu-Icon{
+    margin-top: 10px;
+    margin-left: 20px;
+}
+.NavBarDown2.dark{
+    background-color: #333333;
+    color: white;
+}
+
+.step1{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.IconDiv2{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-left: 730px;
+}
+.profileImage{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.Sun-Icon{
+    color: gray;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.Sun-Icon.dark{
+    color: white;
+}
+
+.Notification-Icon{
+    color: gray;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.Notification-Icon.dark{
+    color: white;
+}
+.Language-Icon{
+    color: gray;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.Language-Icon.dark{
+    color: white;
+}
+.theme-dropdown-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .theme-dropdown {
+   display: inline-block;
+    top: 30px;
+    right: 200px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 120px;
+    padding: 8px 0;
+    z-index: 10;
+  }
+  .theme-dropdown.dark{
+background-color: #333;
+top:60px
+  }
+  .theme-dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .theme-dropdown ul li {
+    padding: 8px 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+  }
+  
+  .theme-dropdown ul li:hover {
+    background: #f0f0f0;
+  }
+  .theme-dropdown.dark ul li:hover{
+    background: white;
+    color: black;
+  }
+  

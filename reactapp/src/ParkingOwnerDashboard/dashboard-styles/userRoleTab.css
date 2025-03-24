@@ -1,0 +1,39 @@
+.tab-panel.user-roles {
+    padding: 20px;
+    background-color: #f3f4f6;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  .tab-panel.user-roles h2 {
+    color: #374151;
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .role-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .role-item span {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .assign-role-button {
+    background-color: #1890ff;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .assign-role-button:hover {
+    background-color: #1d78d2;
+  }
+  

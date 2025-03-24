@@ -1,0 +1,60 @@
+.tab-panel {
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .tab-panel h2 {
+    color: #1e3a8a;
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .tab-panel p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  label {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  input {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 16px;
+  }
+  
+  input:focus {
+    border-color: #1890ff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(24, 144, 255, 0.5);
+  }
+  
+  .submit-button {
+    background-color: #1890ff;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .submit-button:hover {
+    background-color: #1d78d2;
+  }
+  

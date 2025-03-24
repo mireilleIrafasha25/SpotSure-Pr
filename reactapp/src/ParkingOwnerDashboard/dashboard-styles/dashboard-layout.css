@@ -1,0 +1,33 @@
+.Main-outlet{
+    display: flex;
+    flex-direction: row;
+}
+.outset
+{
+  margin-left: 14rem;
+  margin-top: 4.5rem;
+}
+.outset.dark{
+  background-color: #070707 ;
+  width:900px
+}
+.outset.light{
+  background-color: white;
+  width:900px
+}
+  
+  .Main-outlet.dark {
+    background-color: #070707;
+    color: white;
+  }
+  .SideBar-Element {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background-color 0.3s ease-in-out;
+  }
+  .SideBar-Element.dark {
+    background-color:  #070707;
+    color: white;
+  }

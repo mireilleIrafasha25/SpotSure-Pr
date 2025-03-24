@@ -1,0 +1,50 @@
+.tab-panel.account {
+    padding: 20px;
+    background-color: #f0f8ff;
+    border: 1px solid #d0d7de;
+    border-radius: 8px;
+  }
+  
+  .tab-panel.account h2 {
+    color: #1e40af;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .account-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  input,
+  select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 16px;
+  }
+  
+  .button-group {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .button-save {
+    background-color: #1890ff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .button-cancel {
+    background-color: #d32f2f;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+  }
+  

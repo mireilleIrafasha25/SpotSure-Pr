@@ -1,0 +1,45 @@
+
+  .Toggle-Icon {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .Toggle-Switch {
+    width: 50px;
+    height: 24px;
+    background-color: white;
+    border-radius: 12px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .Toggle-Switch:hover {
+    background-color: #e0efeced;
+  }
+  
+  .Toggle-Circle {
+    width: 20px;
+    height: 20px;
+    background-color: blue;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  }
+  
+  .Toggle-Circle.dark {
+    left: 28px;
+    background-color: blue;
+    box-shadow: 0 0 15px rgba(164, 164, 160, 0.8);
+  }
+  .Sun-Icon.dark {
+    fill: white;
+  }
+  .Moon-Icon.dark {
+    fill: white;
+  }
