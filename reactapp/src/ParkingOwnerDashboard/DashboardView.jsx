@@ -1,7 +1,7 @@
 
 import React from 'react';
 import Analytics from './Analytics';
-const AdminDashboardPro=()=>
+const ParkingOwnerHome=()=>
 {
     
     return(
@@ -11,4 +11,4 @@ const AdminDashboardPro=()=>
        
     )
 }
-export default AdminDashboardPro;
+export default ParkingOwnerHome;

@@ -3,7 +3,7 @@ import NavBarDashboard from "./navbar";
 import { Outlet } from "react-router-dom";
 import "./dashboard-styles/dashboard-layout.css"
 import { useDarkMode } from "../dashboard/context/DarkModeContext"
-const AdminLayout = () => {
+const ParkingOwnerLayout = () => {
 const {theme}=useDarkMode();
     return (
         <div className={`Main-outlet ${theme}`}>
@@ -14,4 +14,4 @@ const {theme}=useDarkMode();
         </div>
     );
 }
-export default AdminLayout;
+export default ParkingOwnerLayout;

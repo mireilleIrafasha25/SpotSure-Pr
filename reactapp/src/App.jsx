@@ -25,6 +25,8 @@ import Report from "./AdminDashboard/Report"
 import ManageUserDash from "./AdminDashboard/UserTable"
 import Settings from "./AdminDashboard/settings"
 import RegisterParkingOwner from "./AdminDashboard/AddParkingOwner"
+import ParkingOwnerHome from "./ParkingOwnerDashboard/DashboardView"
+import ParkingOwnerLayout from "./ParkingOwnerDashboard/dashboardLayout"
 function App() {
   return (
     <DarkModeProvider>
@@ -57,6 +59,9 @@ function App() {
           <Route path="/UserDash" element={<ManageUserDash/>} />
           <Route path="/setting" element={<Settings/>} />
           <Route path="/register-parking" element={<RegisterParkingOwner/>} />
+     </Route>
+     <Route path="/" element={<ParkingOwnerLayout/>}>
+      <Route path="/parkingOwner-dashboard" index element={<ParkingOwnerHome/>} />
      </Route>
     </Routes>
     </Router>

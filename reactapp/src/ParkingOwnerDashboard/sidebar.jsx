@@ -26,10 +26,12 @@ const navigate=useNavigate();
             <span>SpotSure</span>
             </div>  
             <div className="Main-Icon">
-            <Link to="/admin-dashboard" style={{textDecoration:"none"}}><div className={`icon ${theme}`}><MdOutlineAnalytics/><span >Dashboard</span></div></Link>
-           <Link to="/add-parking" style={{textDecoration:"none"}}><div className={`icon ${theme}`}><MdOutlineProductionQuantityLimits/><span >Parking</span></div></Link> 
-           <Link to="/register-parking" style={{textDecoration:"none"}}><div className={`icon ${theme}`}><FaUsersGear/><span>Parking Owner</span></div> </Link>
-           <Link to="/UserDash" style={{textDecoration:"none"}}>  <div className={`icon ${theme}`}><FiUser/><span>Users</span></div> </Link>
+            <Link to="/parkingOwner-dashboard" style={{textDecoration:"none"}}><div className={`icon ${theme}`}><MdOutlineAnalytics/><span >Overview</span></div></Link>
+           <Link to="/add-parking" style={{textDecoration:"none"}}><div className={`icon ${theme}`}><MdOutlineProductionQuantityLimits/><span >Parking Status</span></div></Link> 
+           <Link to="/register-parking" style={{textDecoration:"none"}}><div className={`icon ${theme}`}><FaUsersGear/><span>Recent Reservation</span></div> </Link>
+           <Link to="/UserDash" style={{textDecoration:"none"}}>  <div className={`icon ${theme}`}><FiUser/><span>Reports and Insights</span></div> </Link>
+
+           <Link to="/UserDash" style={{textDecoration:"none"}}>  <div className={`icon ${theme}`}><FiUser/><span>Notifications & Alerts</span></div> </Link>
             </div>
             <div className="Main-Icon2">
             <Link to="/setting" style={{textDecoration:"none"}}>
