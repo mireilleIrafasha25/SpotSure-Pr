@@ -3,6 +3,7 @@ import About from "./About";
 import Contact from "./Contact";
 import Services from "./Service";
 import Login from "./Login";
+import Testimonial from "./Testimony";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 const Home = () => {
@@ -26,6 +27,7 @@ const Home = () => {
       <About/>
       <Services/>
       <Contact/>
+      <Testimonial/>
     </div>
   );
 };
