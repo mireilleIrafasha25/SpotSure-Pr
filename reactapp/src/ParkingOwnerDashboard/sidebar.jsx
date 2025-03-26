@@ -9,6 +9,7 @@ import "./dashboard-styles/sidebar.css"
 import { useDarkMode } from "../dashboard/context/DarkModeContext";
 import{Link,useNavigate} from "react-router-dom"
 import { useAuth } from "../component/AuthProvider";
+import { IoMdNotifications } from "react-icons/io";
 const SideBar=()=>
 {
   const {logout}=useAuth();
@@ -27,11 +28,10 @@ const navigate=useNavigate();
             </div>  
             <div className="Main-Icon">
             <Link to="/parkingOwner-dashboard" style={{textDecoration:"none"}}><div className={`icon ${theme}`}><MdOutlineAnalytics/><span >Overview</span></div></Link>
-           <Link to="/add-parking" style={{textDecoration:"none"}}><div className={`icon ${theme}`}><MdOutlineProductionQuantityLimits/><span >Parking Status</span></div></Link> 
-           <Link to="/register-parking" style={{textDecoration:"none"}}><div className={`icon ${theme}`}><FaUsersGear/><span>Recent Reservation</span></div> </Link>
-           <Link to="/UserDash" style={{textDecoration:"none"}}>  <div className={`icon ${theme}`}><FiUser/><span>Reports and Insights</span></div> </Link>
-
-           <Link to="/UserDash" style={{textDecoration:"none"}}>  <div className={`icon ${theme}`}><FiUser/><span>Notifications & Alerts</span></div> </Link>
+           <Link to="/parking-status" style={{textDecoration:"none"}}><div className={`icon ${theme}`}><MdOutlineProductionQuantityLimits/><span >Parking Status</span></div></Link> 
+           <Link to="/recent-reservation" style={{textDecoration:"none"}}><div className={`icon ${theme}`}><FaUsersGear/><span>Recent Reservation</span></div> </Link>
+           <Link to="/parking-report" style={{textDecoration:"none"}}>  <div className={`icon ${theme}`}><FiUser/><span>Reports and Insights</span></div> </Link>
+           <Link to="/notification" style={{textDecoration:"none"}}>  <div className={`icon ${theme}`}><IoMdNotifications/><span>Notifications & Alerts</span></div> </Link>
             </div>
             <div className="Main-Icon2">
             <Link to="/setting" style={{textDecoration:"none"}}>
