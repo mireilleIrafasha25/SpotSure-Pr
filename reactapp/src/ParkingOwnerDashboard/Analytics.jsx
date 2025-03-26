@@ -13,6 +13,10 @@ import { FaCaretDown } from "react-icons/fa6";
 import PieChart1 from "./PieChart1";
 import { LuRefreshCw } from "react-icons/lu";
 import TodayBookingTable from "./TodayBookingTable";
+import { useState } from "react";
+import { useEffect } from "react";
+import { Notify } from "notiflix";
+import axios from "axios";
 const Analytics = () => {
   const { theme } = useDarkMode();
   const cardData = [
@@ -34,6 +38,23 @@ const Analytics = () => {
   const cardData4=[
     { title: "Booking Status", value: "256"}
   ]
+    const [parkingSpots, setParkingSpots] = useState([]);
+  useEffect(() => {
+        const fetchParkingSpots = async () => {
+          try {
+            const response = await axios.get(
+              "https://spotsure-backend-e4nq.onrender.com/SpotSure/booking/listBooking"
+            );
+            setParkingSpots(response.data); // Assuming data is an array of parking spots
+            console.log(response.data);
+
+          } catch (err) {
+            // console.error("Error fetching parking spots:", err);
+            Notify.failure(err.message);
+          }
+      }
+      fetchParkingSpots();
+    }, []);
 
   return (
     <div className="Main-Analytic">
@@ -81,7 +102,7 @@ const Analytics = () => {
       {cardData4.map((card, index) => (
         <div className={`stats-card3 ${theme} card-${index + 1}`} key={index}>
           <div className={`card-title3 ${theme}` }>{card.title}</div>
-          <div className={`card-number3 ${theme}`}>{card.value}</div>
+          <div className={`card-number3 ${theme}`}>{parkingSpots.length}</div>
           <div className={`Arrow-Number3 ${theme}`}>Daily</div>
          <PieChart1/>
         </div>
