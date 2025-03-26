@@ -11,10 +11,8 @@ import { useDarkMode } from "../dashboard/context/DarkModeContext";
 import SimpleBarChart from "./BarChart";
 import { FaCaretDown } from "react-icons/fa6";
 import PieChart1 from "./PieChart1";
-import SmallRadialChart from "./SmallPieChart";
-import LineChart1 from "./linechart";
-import CustomerOrderTable from "./customerTable";
 import { LuRefreshCw } from "react-icons/lu";
+import TodayBookingTable from "./TodayBookingTable";
 const Analytics = () => {
   const { theme } = useDarkMode();
   const cardData = [
@@ -93,13 +91,13 @@ const Analytics = () => {
       </div>
       <div className={`column2  ${theme}`}>
       <div className={`User-table  ${theme}`}>
-        <div className={`Customer-Order  ${theme}`}><span>Customer Order</span> <LuRefreshCw/></div>
-          <CustomerOrderTable/>
+        <div className={`Customer-Order  ${theme}`}><span>Today Booking</span> <LuRefreshCw/></div>
+          <TodayBookingTable/>
         </div>
         <div className={`BarChartcolumn  ${theme}`}>
                   <div className={`Bar-top  ${theme}`}>
-                    <div className={`sale  ${theme}`}>Sale Dynamics</div>
-                    <div className={`Year-Bar  ${theme}`}><span>2021 <FaCaretDown/> </span></div>
+                    <div className={`sale  ${theme}`}>Monthly Booking</div>
+                    <div className={`Year-Bar  ${theme}`}><span>2025<FaCaretDown/> </span></div>
                   </div>
                 <SimpleBarChart className={`simple-chartD  ${theme}`}/>
                 </div>
