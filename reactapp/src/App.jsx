@@ -62,6 +62,10 @@ function App() {
      </Route>
      <Route path="/" element={<ParkingOwnerLayout/>}>
       <Route path="/parkingOwner-dashboard" index element={<ParkingOwnerHome/>} />
+      <Route path="/parking-status" element={<AddParkingLot/>}/>
+          <Route path="/recent-reservation" element={<Report/>} />
+          <Route path="/parking-report" element={<ManageUserDash/>} />
+          <Route path="/notification" element={<Settings/>} />
      </Route>
     </Routes>
     </Router>
