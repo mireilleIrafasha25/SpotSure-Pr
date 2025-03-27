@@ -34,7 +34,7 @@ const navigate=useNavigate();
            <Link to="/notification" style={{textDecoration:"none"}}>  <div className={`icon ${theme}`}><IoMdNotifications/><span>Notifications & Alerts</span></div> </Link>
             </div>
             <div className="Main-Icon2">
-            <Link to="/setting" style={{textDecoration:"none"}}>
+            <Link to="/parking-setting" style={{textDecoration:"none"}}>
              <div className={`icon2 ${theme}`}><MdOutlineSettingsSuggest/><span>Settings</span></div></Link>
             <div onClick={handleLogout} className={`icon2 ${theme}`}><LiaSignOutAltSolid/><span>Sign Out</span></div>
             </div>

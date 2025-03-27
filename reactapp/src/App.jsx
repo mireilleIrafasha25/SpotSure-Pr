@@ -29,7 +29,7 @@ import ParkingOwnerHome from "./ParkingOwnerDashboard/DashboardView"
 import ParkingOwnerLayout from "./ParkingOwnerDashboard/dashboardLayout"
 import ParkingStatus from "./ParkingOwnerDashboard/AddProduct"
 import RecentReservation from "./ParkingOwnerDashboard/Recent Reservation"
-import ParkingReport from "./ParkingOwnerDashboard/profile"
+import ParkingReport from "./ParkingOwnerDashboard/parkingReport"
 function App() {
   return (
     <DarkModeProvider>
@@ -68,7 +68,8 @@ function App() {
       <Route path="/parking-status" element={<ParkingStatus/>}/>
           <Route path="/recent-reservation" element={<RecentReservation/>} />
           <Route path="/parking-report" element={<ParkingReport/>} />
-          <Route path="/notification" element={<Settings/>} />
+          <Route path="/notification" element={<BookingConfirmation/>} />
+          <Route path="/parking-setting" element={<Settings/>}/>
      </Route>
     </Routes>
     </Router>

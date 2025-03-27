@@ -1,25 +1,7 @@
 import React from "react";
-import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, LineChart, Line } from "recharts";
 import "./dashboard-styles/parkingReport.css";
 
 const ParkingReport = () => {
-  // Reservation Trends Data
-  const reservationData = [
-    { name: "Week 1", reservations: 30 },
-    { name: "Week 2", reservations: 45 },
-    { name: "Week 3", reservations: 50 },
-    { name: "Week 4", reservations: 70 },
-  ];
-
-  // Peak Hours Data
-  const peakHoursData = [
-    { hour: "6AM", count: 5 },
-    { hour: "9AM", count: 20 },
-    { hour: "12PM", count: 35 },
-    { hour: "3PM", count: 50 },
-    { hour: "6PM", count: 80 },
-    { hour: "9PM", count: 40 },
-  ];
 
   // Revenue Reports Data
   const revenueData = [
@@ -37,31 +19,7 @@ const ParkingReport = () => {
   ];
 
   return (
-    <div className="dashboard-container">
-      {/* Reservation Trends */}
-      <div className="chart-container">
-        <h2>Reservation Trends</h2>
-        <BarChart width={400} height={250} data={reservationData}>
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
-          <YAxis />
-          <Tooltip />
-          <Bar dataKey="reservations" fill="orangered" />
-        </BarChart>
-      </div>
-
-      {/* Peak Hours Analysis */}
-      <div className="chart-container">
-        <h2>Peak Hours Analysis</h2>
-        <LineChart width={400} height={250} data={peakHoursData}>
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="hour" />
-          <YAxis />
-          <Tooltip />
-          <Line type="monotone" dataKey="count" stroke="darkblue" />
-        </LineChart>
-      </div>
-
+    <div className="dashboard-container0">
       {/* Revenue Reports */}
       <div className="report-container">
         <h2>Revenue Reports</h2>
