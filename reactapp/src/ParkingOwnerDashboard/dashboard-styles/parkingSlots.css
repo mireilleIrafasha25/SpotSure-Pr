@@ -1,0 +1,67 @@
+.slots-container {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  h2 {
+    color: darkblue;
+  }
+  
+  .slots-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+    margin-top: 10px;
+    margin-left: 20rem;
+  }
+  
+  .slot {
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+   
+  }
+  
+  .available {
+    background-color: #022F4A;
+    color: white;
+  }
+  
+  .occupied {
+    background-color: orangered;
+    color: white;
+  }
+  
+  .slot:hover {
+    opacity: 0.8;
+  }
+  
+  .slot-details {
+    margin-top: 20px;
+    padding: 15px;
+    background: #022F4A;
+    color: white;
+    border-radius: 8px;
+    display: inline-block;
+  }
+  
+  button {
+    background: orangered;
+    border: none;
+    padding: 8px 12px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }
+  

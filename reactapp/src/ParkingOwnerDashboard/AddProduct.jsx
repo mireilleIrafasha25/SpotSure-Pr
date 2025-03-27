@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Notify } from "notiflix";
-import AllParking from "./AllParking";
+import ParkingSlots from "./ParkingSlots";
 import CarsInParking from "./CarInParking";
 import "./dashboard-styles/Addparking.css"
 const ParkingStatus = () => {
@@ -13,12 +13,12 @@ const ParkingStatus = () => {
     <div>
           <div className="welcomeCard">
         <button onClick={() => handleTabClick('add-parking')}>CAR IN PARKING</button>
-        <button onClick={() => handleTabClick('AllProduct')}> VIEW ALL PARKING HERE</button>
+        <button onClick={() => handleTabClick('AllProduct')}> PARKING SLOTS</button>
       </div>
       {activeContent==='add-parking'&&(
     <CarsInParking/>
     )}
-    {activeContent==='AllProduct'&&(<AllParking/>)}
+    {activeContent==='AllProduct'&&(<ParkingSlots/>)}
     </div>
   );
 };

@@ -1,11 +1,10 @@
 import React from "react";
 import "./dashboard-styles/carInparking.css"
 const CarsInParking = () => {
-    const cars = [
-        { plate: "ABC123", checkIn: "10:00 AM", checkOut: "12:00 PM" },
-        { plate: "DEF456", checkIn: "11:00 AM", checkOut: "1:00 PM" },
-        { plate: "GHI789", checkIn: "9:00 AM", checkOut: "11:00 AM" },
-      ];
+  const cars = [
+    { plate: "RAB 123 D", checkIn: "9:00 AM", checkOut: "2:00 PM" },
+    { plate: "RAF 456 E", checkIn: "10:30 AM", checkOut: "3:00 PM" },
+  ];
 
   return (
     <div className="cars-container">
