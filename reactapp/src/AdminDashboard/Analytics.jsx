@@ -18,13 +18,13 @@ import { LuRefreshCw } from "react-icons/lu";
 const Analytics = () => {
   const { theme } = useDarkMode();
   const cardData = [
-    { title: "Orders", value: 201 ,icon:<MdContentCopy/>,perc:"20%"},
+    { title: "Parking Owner", value: 201 ,icon:<MdContentCopy/>,perc:"20%"},
     { title: "Approved", value: 36 ,icon:<FaRegSquareCheck/>,perc:"8.5%"},
 
   ];
   const cardData1=[
-    { title: "Month Total", value: "25,410",icon:<BsCurrencyDollar/>,perc:"0.2%" },
-    { title: "Revenue", value: "1,352",icon:<BsCalendarEvent/> ,perc:"2.4%"},
+    { title: "Total Revenue", value: "25,410",icon:<BsCurrencyDollar/>,perc:"0.2%" },
+    { title: "CarOwner", value: "1,352",icon:<BsCalendarEvent/> ,perc:"2.4%"},
   ]
   const cardData2=[
     { title: "Paid Invoice", value: "$25,410",icon:<LuNotebook/>,perc:"0.2%",description:"The total paid invoices for the current financial year amount to $25,410,and verified payments received during this period." },
@@ -94,8 +94,8 @@ const Analytics = () => {
       <div className={`column2  ${theme}`}>
         <div className={`BarChartcolumn  ${theme}`}>
           <div className={`Bar-top  ${theme}`}>
-            <div className={`sale  ${theme}`}>Sale Dynamics</div>
-            <div className={`Year-Bar  ${theme}`}><span>2021 <FaCaretDown/> </span></div>
+            <div className={`sale  ${theme}`}>Monthly AllBooking</div>
+            <div className={`Year-Bar  ${theme}`}><span>2025 <FaCaretDown/> </span></div>
           </div>
         <SimpleBarChart className={`simple-chartD  ${theme}`}/>
         </div>

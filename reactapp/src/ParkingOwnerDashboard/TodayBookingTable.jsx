@@ -12,7 +12,7 @@ export default function TodayBookingTable() {
         Notify.failure("No authentication token found!");
         return;
       }
-      const response = await axios.get('http://localhost:4000/SpotSure/booking/todayBooking' , 
+      const response = await axios.get('https://spotsure-backend-e4nq.onrender.com/SpotSure/booking/todayBooking' , 
         { headers: { Authorization: `Bearer ${token}` } }
       );
       setBooking(response.data.data || []);
