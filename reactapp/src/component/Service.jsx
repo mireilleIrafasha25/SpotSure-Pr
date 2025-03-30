@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/service.css"; // Import the CSS file
-
+import { Link } from "react-router-dom";
 const servicesData = [
   {
     id: 1,
@@ -43,6 +43,7 @@ const Services = () => {
         </div>
       ))}
     </div>
+    <Link to="/sound">Play Sound</Link>
     </div>
   );
 };
