@@ -13,6 +13,10 @@ const AuthProvider = ({ children }) => {
     localStorage.removeItem("userName"); 
     localStorage.removeItem("userEmail");
     localStorage.removeItem("user")
+    localStorage.removeItem("bookingId");
+    localStorage.removeItem("selectedParkingId")
+    localStorage.removeItem("selectedParkingName")
+    localStorage.removeItem("destinationName")
     // Siba izina rya user
     setUserRole(null);
   };

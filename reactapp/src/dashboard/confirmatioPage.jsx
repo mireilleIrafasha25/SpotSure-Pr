@@ -21,14 +21,15 @@ const BookingConfirmation = () => {
           error.response?.data?.message || "Failed to fetch booking details"
         );
       }
+
     };
     fetchBooking();
   }, [bookingId]);
-
+  const parkingName= localStorage.getItem("selectedParkingName")
   if (!booking) {
     return <p>Loading booking details...</p>;
   }
-
+     const Qrvalue=`Yes ${booking.username} with ${booking.plateNumber} was booked spot in ${parkingName}`
   // QR Code should contain useful information for verification
   const qrValue = JSON.stringify({
     bookingId: booking._id,
@@ -53,7 +54,7 @@ const BookingConfirmation = () => {
 
       <div className="qr-code">
         <h3>Scan to Verify 🚗</h3>
-        <QRCodeCanvas value={qrValue} size={180} />
+        <QRCodeCanvas value={Qrvalue} size={180} />
       </div>
     </div>
   );
