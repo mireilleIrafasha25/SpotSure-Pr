@@ -25,9 +25,6 @@ const DashboardHome = () => {
       if(storedEmail) {
         setUserEmail(storedEmail);
       }
-        const response = await axios.get("https://spotsure-backend-e4nq.onrender.com/SpotSure/user/listAll", {
-          headers: { Authorization: `Bearer ${token}` },
-        });
      
       } catch (error) {
         console.error("Error fetching dashboard data:", error);
@@ -44,29 +41,10 @@ const DashboardHome = () => {
 
   return (
     <div className={`Main-View ${theme}`}>
-      {/* Welcome Message */}
-      <div className={`welcome-message ${theme}`}>
-        <img src="/CarHomeBg.jpg" alt="" className={`ProfImage ${theme}`}/>
-        <div className={`dashName ${theme}`}>{userName ? userName : "Guest"} <br/>
-        <div className={`dashName ${theme}`}>{userEmail?userEmail:"Guest Email"}</div>
-        </div>
-      </div>
-
-      {/* Quick Actions */}
-      <div className={`quick-actions ${theme}`}>
-        <div className="action-button" onClick={() => HandleActionClick("dashUser")}>
-         <div className={`step1 ${theme}`}><span className="startWith">Start With</span><span> Find Near Parking</span></div>
-        </div>
-        <div className="action-button" onClick={() => HandleActionClick("QRCode")}>
-        <div className={`step1 ${theme}`}><span className="endWith">At The End</span><span> QR CODE</span></div>
-        </div>
-      </div>
-      {/* Main Active Content */}
       <div className={`Main-Active-Content ${theme}`}>
         {activeContent === "dashUser" && (
           <DestinationForm />
         )}
-        {activeContent === "QRCode" && <BookingConfirmation />}
       </div>
     </div>
   );

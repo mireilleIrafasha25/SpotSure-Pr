@@ -4,6 +4,7 @@
     width: 100%;
     right: 0;
     padding: 20px;
+    padding-top: 0px;
     background-color: none;
     display: flex;
     flex-direction: column;
@@ -80,11 +81,12 @@
 
 /* Active Content Section */
 .Main-Active-Content {
-    margin-top: 20px;
+    margin-top: 0px;
     width: 100%;
     max-width: 800px;
     min-height: 400px;
     padding: 20px;
+    padding-top: 0px;
     border-radius: 12px;
 }
 

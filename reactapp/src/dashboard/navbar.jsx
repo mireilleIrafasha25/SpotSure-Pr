@@ -3,15 +3,17 @@ import { useDarkMode } from "./context/DarkModeContext";
 import { MdSunny } from "react-icons/md";
 import { MdSettingsApplications } from "react-icons/md";
 import { MdLanguage } from "react-icons/md";
-import { useState } from "react";
+import { useState ,useEffect} from "react";
 import { MdDarkMode } from "react-icons/md";
 import { IoMenu } from "react-icons/io5";
 const NavBarDashBoard=()=>
     
 {
-  const { theme, toggleTheme } = useDarkMode();
-    const [isDropdownOpen, setIsDropdownOpen] = useState(false); // 🔹 State ya dropdown
 
+  const { theme, toggleTheme } = useDarkMode();
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false); // 🔹 State ya dropdown
+  const [userName, setUserName] = useState("");
+  const [userEmail, setUserEmail] = useState("");
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
@@ -20,7 +22,28 @@ const NavBarDashBoard=()=>
     setIsDropdownOpen(false);
 };
 
+  useEffect(() => {
+    const fetchDashboardData = async () => {
+      try {
+        const token = localStorage.getItem("token");
 
+        // Retrieve username from local storage
+        const storedName = localStorage.getItem("userName");
+        if (storedName) {
+          setUserName(storedName);
+        }
+      const storedEmail=localStorage.getItem("userEmail");
+      if(storedEmail) {
+        setUserEmail(storedEmail);
+      }
+     
+      } catch (error) {
+        console.error("Error fetching dashboard data:", error);
+      }
+    };
+
+    fetchDashboardData();
+  }, []);
 return(
     <div>
         <div className="Main-Navbar2">
@@ -37,9 +60,8 @@ return(
                   </ul>
                 </div>
               )}
-                 
-                 <MdLanguage size={24} className={`Language-Icon ${theme}`}/>
                  <img src="/no-profilebg.png" className="profileImage"/>
+                 <div className={`dashName ${theme}`}>{userName ? userName : "Guest"} <br/></div>
              </div>
             </div>
         </div>

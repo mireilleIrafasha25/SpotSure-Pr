@@ -16,7 +16,7 @@ import DashboardHome from "./dashboard/DashboardView"
 import DashboardLayout from "./dashboard/dashboardLayout"
 import ParkingSpots from "./dashboard/AvailableParkingSpots"
 import DestinationForm from "./dashboard/DestinationForm"
-import Payment from "./dashboard/Payment"
+import PaymentForm from "./dashboard/Payment"
 import BookingForm from "./dashboard/BookingForm"
 import AdminLayout from "./AdminDashboard/dashboardLayout"
 import AdminDashboardPro from "./AdminDashboard/DashboardView"
@@ -53,7 +53,7 @@ function App() {
      <Route path="/confirm" element={<BookingConfirmation/>}/> 
      <Route path="/destination" element={<DestinationForm/>}/>
      <Route path="/availableParking" element={<ParkingSpots/>}/>
-     <Route path="/payment" element={<Payment/>}/>
+     <Route path="/payment" element={<PaymentForm/>}/>
      <Route path="/booking" element={<BookingForm/>}/>
      </Route>
      <Route path="/" element={<AdminLayout/>}>

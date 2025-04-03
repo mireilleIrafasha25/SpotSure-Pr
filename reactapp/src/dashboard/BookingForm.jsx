@@ -6,12 +6,17 @@ const BookingForm = () => {
   const [bookingDuration, setBookingDuration] = useState("");
   const [plateNumber, setPlateNumber] = useState("");
   const [parkingid, setParkingid] = useState("");
+  const[ParkingName, setParkingName] = useState("");
 const navigate=useNavigate();
   useEffect(() => {
     // Retrieve the parking ID from localStorage
     const storedParkingId = localStorage.getItem("selectedParkingId");
     if (storedParkingId) {
       setParkingid(storedParkingId);
+    }
+    const storedParkingName=localStorage.getItem("selectedParkingName");
+    if (storedParkingName) {
+      setParkingName(storedParkingName);
     }
   }, []);
 
@@ -22,7 +27,7 @@ const navigate=useNavigate();
       Notify.failure( "No parking spot selected!");
     }
 
-    const bookingData = { bookingDuration, parkingid, plateNumber };
+    const bookingData = { bookingDuration, parkingid, plateNumber,ParkingName };
     try {
       const response = await fetch("https://spotsure-backend-e4nq.onrender.com/SpotSure/booking/newBooking", {
         method: "POST",
@@ -63,6 +68,8 @@ const navigate=useNavigate();
 
         <label>Selected Parking </label>
         <input type="password" value={parkingid} disabled />
+        <label>Parking Name:</label>
+        <input type="text" value={ParkingName} disabled />
 
         <label>Plate Number:</label>
         <input
