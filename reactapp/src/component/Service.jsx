@@ -43,7 +43,7 @@ const Services = () => {
         </div>
       ))}
     </div>
-    <Link to="/sound">Play Sound</Link>
+  
     </div>
   );
 };

@@ -30,7 +30,7 @@ import ParkingOwnerLayout from "./ParkingOwnerDashboard/dashboardLayout"
 import ParkingStatus from "./ParkingOwnerDashboard/AddProduct"
 import RecentReservation from "./ParkingOwnerDashboard/Recent Reservation"
 import ParkingReport from "./ParkingOwnerDashboard/parkingReport"
-import SoundTest from "./component/Sound"
+
 function App() {
   return (
     <DarkModeProvider>
@@ -46,7 +46,6 @@ function App() {
       <Route path="/login" element={<Login/>}/>
       <Route path="/register" element={<Register_own/>}/>
       <Route path="/verify" element={<Verification/>}/>
-      <Route path="/sound" element={<SoundTest/>}/>
       
      </Route>
      <Route path="/" element={<DashboardLayout/>}>

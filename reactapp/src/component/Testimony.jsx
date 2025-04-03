@@ -11,7 +11,7 @@ const testimonials = [
     text: "This service saved me so much time! I can reserve a spot in advance, and the customer support is fantastic. Highly recommended!",
   },
   {
-    image: "/client3.jpg",
+    image: "/grad.jpg",
     text: "Convenient, reliable, and affordable. The parking spaces are well-maintained, and the process is super smooth. Great service!",
   },
 ];
