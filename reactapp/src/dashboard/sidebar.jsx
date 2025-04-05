@@ -26,7 +26,7 @@ const navigate=useNavigate();
             </div>  
             <div className="Main-Icon">
             <Link to="/client-dashboard" style={{textDecoration:"none"}}><div className={`icon ${theme}}`}><MdOutlineAnalytics/><span >Home</span></div></Link>
-           <Link to="/booking" style={{textDecoration:"none"}}><div className={`icon ${theme}`}><MdOutlineProductionQuantityLimits/><span >Booking</span></div></Link> 
+           <Link to="/carOwner-Booking" style={{textDecoration:"none"}}><div className={`icon ${theme}`}><MdOutlineProductionQuantityLimits/><span >Booking</span></div></Link> 
            <Link to="/payment" style={{textDecoration:"none"}}><div className={`icon ${theme}`}><CgMail/><span>Payment</span></div> </Link>
            <Link to="/destination" style={{textDecoration:"none"}}>  <div className={`icon ${theme}`}><FiUser/><span>Parking Spot Finder</span></div> </Link>
             

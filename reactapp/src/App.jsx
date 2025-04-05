@@ -30,7 +30,7 @@ import ParkingOwnerLayout from "./ParkingOwnerDashboard/dashboardLayout"
 import ParkingStatus from "./ParkingOwnerDashboard/AddProduct"
 import RecentReservation from "./ParkingOwnerDashboard/Recent Reservation"
 import ParkingReport from "./ParkingOwnerDashboard/parkingReport"
-
+import CarOwnerBooking from "./dashboard/CarBooking"
 function App() {
   return (
     <DarkModeProvider>
@@ -55,6 +55,7 @@ function App() {
      <Route path="/availableParking" element={<ParkingSpots/>}/>
      <Route path="/payment" element={<PaymentForm/>}/>
      <Route path="/booking" element={<BookingForm/>}/>
+     <Route path="/carOwner-Booking" element={<CarOwnerBooking/>}/>
      </Route>
      <Route path="/" element={<AdminLayout/>}>
       <Route path="/admin-dashboard" index element={<AdminDashboardPro/>} />

@@ -27,12 +27,14 @@ const Login = ({ HandleLoginForm }) => {
       localStorage.setItem("token", token);
       const decoded = jwt_decode(token);
       const userRole = decoded.role;
+      const userId = decoded.id;
       const userName=decoded.Name;
       const userEmail=decoded.email;
       localStorage.setItem("user", JSON.stringify(response.data.user));
        // save name in localStorage
     localStorage.setItem("userName", userName);
     localStorage.setItem("userEmail", userEmail);
+    localStorage.setItem("userId",userId)
       // Close modal first
       HandleLoginForm();
 

@@ -68,9 +68,6 @@ const navigate=useNavigate();
 
         <label>Selected Parking </label>
         <input type="password" value={parkingid} disabled />
-        <label>Parking Name:</label>
-        <input type="text" value={ParkingName} disabled />
-
         <label>Plate Number:</label>
         <input
           type="text"
